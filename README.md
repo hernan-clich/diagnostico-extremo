@@ -1,4 +1,4 @@
-## Diagnostico Extremo website
+## Diagnostico's Extremo website
 
 This is the official website of the Argentina-based automotive diagnostic and scanning firm Diagnostico Extremo.
 
