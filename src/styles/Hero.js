@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import { primary, secondary, plainWhite, outerSpacing } from './Variables';
 
 export const StyledHero = styled.section`

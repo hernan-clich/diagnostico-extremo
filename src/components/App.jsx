@@ -7,6 +7,9 @@ import { About } from './About';
 import { Steps } from './Steps';
 import { Services } from './Services';
 import { Pricing } from './Pricing';
+import { Testimonials } from './Testimonials';
+import { Contact } from './Contact';
+import { Footer } from './Footer';
 
 function App() {
   return (
@@ -18,6 +21,9 @@ function App() {
       <Steps/>
       <Services/>
       <Pricing/>
+      <Testimonials/>
+      <Contact/>
+      <Footer/>
     </>
   );
 }

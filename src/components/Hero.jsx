@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+
 import { StyledHero } from '../styles/Hero';
 import { Button } from './Button.js';
 

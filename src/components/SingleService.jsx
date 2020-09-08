@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { StyledService } from '../styles/SingleService.js';
 
 export const Service = props => {

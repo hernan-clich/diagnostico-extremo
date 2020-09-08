@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { primary, secondary, plainWhite, outerSpacing } from './Variables'
+
+import { primary, secondary, plainWhite, outerSpacing } from './Variables';
 
 export const StyledHeader = styled.header`
     width: 100vw;

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { StyledSteps } from '../styles/Steps';
 import {Step} from './SingleStep';
 import { stepsWhatsapp } from '../svg/stepsWhatsapp.js';

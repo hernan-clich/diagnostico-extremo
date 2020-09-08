@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { StyledStep } from '../styles/SingleStep.js';
 
 export const Step = props => {

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { StyledHeader } from '../styles/Header';
 import { darkLogo } from '../svg/darkLogo.jsx';
 

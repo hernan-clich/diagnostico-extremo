@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import { primary, secondary } from './Variables';
 
 export const StyledService = styled.div`

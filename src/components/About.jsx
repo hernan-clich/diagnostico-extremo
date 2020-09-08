@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { StyledAbout } from '../styles/About';
 
 export const About = () => {
