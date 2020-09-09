@@ -3,7 +3,7 @@ import React from 'react';
 import { StyledContact } from '../styles/Contact';
 import { Button } from './Button.js';
 
-export const Contact = () => {
+const Contact = () => {
     return (
         <StyledContact>
             <div id="contact-wrapper">
@@ -22,3 +22,5 @@ export const Contact = () => {
         </StyledContact>
     )
 }
+
+export default Contact;

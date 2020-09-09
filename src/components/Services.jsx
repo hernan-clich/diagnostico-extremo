@@ -4,9 +4,9 @@ import { StyledServices } from '../styles/Services';
 import { Service } from './SingleService';
 
 
-export const Services = () => {
+const Services = (props, ref) => {
     return (
-        <StyledServices>
+        <StyledServices ref={ref}>
             <h2>Qué observamos</h2>
             <div id="serv-wrapper">
                 <Service
@@ -33,3 +33,5 @@ export const Services = () => {
         </StyledServices>
     )
 }
+
+export default React.forwardRef(Services);

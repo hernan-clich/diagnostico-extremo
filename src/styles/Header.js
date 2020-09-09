@@ -23,13 +23,21 @@ export const StyledHeader = styled.header`
             transform: scale(0.85);
         }
 
-        a {
+        button {
             color: ${primary()};
             cursor: pointer;
             text-decoration: none;
             text-transform: uppercase;
             font-weight: 700;
             margin: 0 1.5em;
+            background-color: ${primary(0)};
+            border: none;
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 0.9rem;
+        }
+
+        button:focus {
+            outline: none;
         }
     }
 

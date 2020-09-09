@@ -3,7 +3,26 @@ import React from 'react';
 import { StyledHeader } from '../styles/Header';
 import { darkLogo } from '../svg/darkLogo.jsx';
 
-export const Header = () => {
+export const Header = (props, ref) => {
+    const { stepsRef, servicesRef, pricingRef, testimonialsRef } = ref;
+
+    const handleStepsClick = () => {
+        window.scrollTo({top: stepsRef.current.offsetTop - 90, behavior: 'smooth'});
+    }
+
+    const handleServicesClick = () => {
+        window.scrollTo({top: servicesRef.current.offsetTop - 90, behavior: 'smooth'});
+    }
+
+    const handlePricingClick = () => {
+        window.scrollTo({top: pricingRef.current.offsetTop - 90, behavior: 'smooth'});
+    }
+
+    const handleTestimonialClick = () => {
+        window.scrollTo({top: testimonialsRef.current.offsetTop - 90, behavior: 'smooth'});
+    }
+    
+
     return (
         <StyledHeader>
             <div id="nav-secondary">
@@ -12,12 +31,14 @@ export const Header = () => {
             <div id="nav-primary">
                 {darkLogo()}
                 <div id="nav-links">
-                    <a href="/">Como funciona</a>
-                    <a href="/">Que observamos</a>
-                    <a href="/">Tarifas</a>
-                    <a href="/">Testimonios</a>
+                    <button onClick={ handleStepsClick }>Como funciona</button>
+                    <button onClick={ handleServicesClick }>Que observamos</button>
+                    <button onClick={ handlePricingClick }>Tarifas</button>
+                    <button onClick={ handleTestimonialClick }>Testimonios</button>
                 </div>
             </div>
         </StyledHeader>
     )
 }
+
+export default React.forwardRef(Header);

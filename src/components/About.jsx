@@ -2,7 +2,7 @@ import React from 'react';
 
 import { StyledAbout } from '../styles/About';
 
-export const About = () => {
+const About = () => {
     return (
         <StyledAbout>
             <h2>Sobre nosotros</h2>
@@ -18,3 +18,5 @@ export const About = () => {
         </StyledAbout>
     )
 }
+
+export default About;

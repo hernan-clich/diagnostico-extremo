@@ -6,9 +6,9 @@ import { stepsWhatsapp } from '../svg/stepsWhatsapp.js';
 import { stepsScanner } from '../svg/stepsScanner.js';
 import { stepsReport } from '../svg/stepsReport.js';
 
-export const Steps = () => {
+const Steps = (props, ref) => {
     return (
-        <StyledSteps>
+        <StyledSteps ref={ref}>
             <div id="steps-img"/>
             <div id="steps-process">
                 <h2>Cómo funciona</h2>
@@ -36,3 +36,5 @@ export const Steps = () => {
         </StyledSteps>
     )
 }
+
+export default React.forwardRef(Steps);

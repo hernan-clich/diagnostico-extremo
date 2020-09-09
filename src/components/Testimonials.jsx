@@ -4,9 +4,9 @@ import { StyledTestimonials } from '../styles/Testimonials';
 import { Testimonial } from './SingleTestimonial';
 
 
-export const Testimonials = () => {
+const Testimonials = (props, ref) => {
     return (
-        <StyledTestimonials>
+        <StyledTestimonials ref={ref}>
             <h2>Qué dicen nuestros clientes</h2>
             <div id="testi-wrapper">
                 <Testimonial
@@ -29,3 +29,5 @@ export const Testimonials = () => {
         </StyledTestimonials>
     )
 }
+
+export default React.forwardRef(Testimonials);

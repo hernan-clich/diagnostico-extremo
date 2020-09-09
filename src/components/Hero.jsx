@@ -3,7 +3,7 @@ import React from 'react';
 import { StyledHero } from '../styles/Hero';
 import { Button } from './Button.js';
 
-export const Hero = () => {
+const Hero = () => {
     return (
         <StyledHero>
             <div id="hero-main">
@@ -19,3 +19,5 @@ export const Hero = () => {
         </StyledHero>
     )
 }
+
+export default Hero;

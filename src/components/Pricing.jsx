@@ -4,7 +4,7 @@ import { precios } from '../precios';
 import { Button } from './Button.js';
 import { StyledPricing } from '../styles/Pricing';
 
-export const Pricing = () => {
+const Pricing = (props, ref) => {
     
     const [price, setPrice] = useState("");
     const [type, setType] = useState("Escaneo");
@@ -31,7 +31,7 @@ export const Pricing = () => {
     }
 
     return (
-        <StyledPricing>
+        <StyledPricing ref={ref}>
             <h2>Tarifas</h2>
             <div className="pricing-wrapper">
                 <div>
@@ -68,3 +68,5 @@ export const Pricing = () => {
         </StyledPricing>
     )
 }
+
+export default React.forwardRef(Pricing);
