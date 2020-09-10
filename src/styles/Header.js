@@ -21,6 +21,7 @@ export const StyledHeader = styled.header`
 
         svg {
             transform: scale(0.85);
+            cursor: pointer;
         }
 
         button {

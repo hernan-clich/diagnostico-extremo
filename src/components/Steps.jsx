@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { StyledSteps } from '../styles/Steps';
-import {Step} from './SingleStep';
+import { Step } from './SingleStep';
 import { stepsWhatsapp } from '../svg/stepsWhatsapp.js';
 import { stepsScanner } from '../svg/stepsScanner.js';
 import { stepsReport } from '../svg/stepsReport.js';

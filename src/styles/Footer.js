@@ -11,13 +11,22 @@ export const StyledFooter = styled.footer`
     justify-content: center;
     align-items: center;
 
-    a, p {
+    button, p, a {
         text-transform: uppercase;
         text-decoration: none;
         color: ${lightText()};
         font-weight: 600;
         margin: 0.75em 0;
         transition: color 200ms ease-in-out;
+        background-color: ${secondary(0)};
+        border: none;
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 0.9rem;
+        cursor: pointer;
+    }
+
+    button:focus {
+            outline: none;
     }
 
     a:hover {

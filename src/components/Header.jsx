@@ -4,8 +4,12 @@ import { StyledHeader } from '../styles/Header';
 import { darkLogo } from '../svg/darkLogo.jsx';
 
 export const Header = (props, ref) => {
-    const { stepsRef, servicesRef, pricingRef, testimonialsRef } = ref;
+    const { heroRef, stepsRef, servicesRef, pricingRef, testimonialsRef } = ref;
 
+    const handleHeroClick = () => {
+        window.scrollTo({top: heroRef.current.offsetTop - 90, behavior: 'smooth'});
+    }
+    
     const handleStepsClick = () => {
         window.scrollTo({top: stepsRef.current.offsetTop - 90, behavior: 'smooth'});
     }
@@ -29,7 +33,9 @@ export const Header = (props, ref) => {
                 <div>Consultas: <a href="https://wa.me/5491138191735" rel="noopener noreferrer" target="_blank">11-3819-1735</a> / <a href="https://wa.me/5491166681006" rel="noopener noreferrer"target="_blank">11-6668-1006</a></div>
             </div>
             <div id="nav-primary">
-                {darkLogo()}
+                <div onClick={ handleHeroClick }>
+                    {darkLogo()}
+                </div>
                 <div id="nav-links">
                     <button onClick={ handleStepsClick }>Como funciona</button>
                     <button onClick={ handleServicesClick }>Que observamos</button>

@@ -17,26 +17,34 @@ function App() {
   const servicesRef = useRef(null);
   const pricingRef = useRef(null);
   const testimonialsRef = useRef(null);
+  const heroRef = useRef(null);
 
   return (
     <>
       <GlobalStyles/>
       <Header
         ref={{
+          heroRef,
           servicesRef,
           stepsRef, 
           pricingRef, 
           testimonialsRef
         }}
       />
-      <Hero/>
+      <Hero ref={heroRef}/>
       <About/>
       <Steps ref={stepsRef}/>
       <Services ref={servicesRef}/>
       <Pricing ref={pricingRef}/>
       <Testimonials ref={testimonialsRef}/>
       <Contact/>
-      <Footer/>
+      <Footer
+        ref={{
+          servicesRef,
+          stepsRef, 
+          pricingRef
+        }}
+      />
     </>
   );
 }

@@ -6,12 +6,26 @@ import { footerFb } from '../svg/footerFb';
 import { footerIg } from '../svg/footerIg';
 import { footerEmail } from '../svg/footerEmail';
 
-const Footer = () => {
+const Footer = (props, ref) => {
+    const { stepsRef, servicesRef, pricingRef } = ref;
+
+    const handleStepsClick = () => {
+        window.scrollTo({top: stepsRef.current.offsetTop - 90, behavior: 'smooth'});
+    }
+
+    const handleServicesClick = () => {
+        window.scrollTo({top: servicesRef.current.offsetTop - 90, behavior: 'smooth'});
+    }
+
+    const handlePricingClick = () => {
+        window.scrollTo({top: pricingRef.current.offsetTop - 90, behavior: 'smooth'});
+    }
+
     return (
         <StyledFooter>
-            <a href="/">Cómo funciona</a>
-            <a href="/">Qué observamos</a>
-            <a href="/">Tarifas</a>
+            <button onClick={handleStepsClick}>Cómo funciona</button>
+            <button onClick={handleServicesClick}>Qué observamos</button>
+            <button onClick={handlePricingClick}>Tarifas</button>
             <div className="footer-icons">
                 <div><a href="/">{footerWa()}</a></div>
                 <div><a href="/">{footerFb()}</a></div>
@@ -24,4 +38,4 @@ const Footer = () => {
     )
 }
 
-export default Footer;
+export default React.forwardRef(Footer);

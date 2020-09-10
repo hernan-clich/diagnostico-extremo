@@ -3,9 +3,9 @@ import React from 'react';
 import { StyledHero } from '../styles/Hero';
 import { Button } from './Button.js';
 
-const Hero = () => {
+const Hero = (props, ref) => {
     return (
-        <StyledHero>
+        <StyledHero ref={ref}>
             <div id="hero-main">
                 <div className="hero-text-wrapper">
                     <div className="hero-text">
@@ -20,4 +20,4 @@ const Hero = () => {
     )
 }
 
-export default Hero;
+export default React.forwardRef(Hero);
