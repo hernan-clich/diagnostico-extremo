@@ -38,21 +38,22 @@ export const StyledAbout = styled.section`
 
         #about-img {
             background-color: ${secondary()};
-            min-width: 496px;
             width: 100%;
             min-height: 300px;
             position: relative;
             &::after{
                 position: absolute;
                 content: "";
-                left: ${outerSpacing()};
-                right: ${outerSpacing()};;
                 top: 5%;
-                background-color: grey;
+                left: 50%;
+                background: url(./assets/melli.png) 55% 35% no-repeat;
+                background-size: 150%;
                 border-radius: 5px;
-                min-width: 50%;
+                min-width: 320px;
+                width: 50%;
                 min-height: 225px;
                 height: 60%;
+                transform: translateX(-50%);
             }
         }
 

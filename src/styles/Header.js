@@ -40,6 +40,68 @@ export const StyledHeader = styled.header`
         button:focus {
             outline: none;
         }
+
+        #burger {
+            width: 45px;
+            height: 45px;
+            background-color: ${secondary(0.3)};
+            display: flex;
+            justify-content: center;
+            cursor: pointer;
+
+            .nav-closed, .nav-open {
+                align-self: center;
+                display: block;
+                width: 80%;
+                height: 5px;
+                position: relative;
+                transition: background-color 150ms ease-in-out;
+                
+                &::before {
+                    position: absolute;
+                    content: "";
+                    width: 100%;
+                    height: 5px;
+                    top: -11px;
+                    background-color: ${primary()};
+                    transition: transform 150ms ease-in-out;
+                }
+
+                &::after {
+                    position: absolute;
+                    content: "";
+                    width: 100%;
+                    height: 5px;
+                    top: 11px;
+                    background-color: ${primary()};
+                    transition: transform 150ms ease-in-out;
+                }
+            }
+
+            .nav-closed {
+                background-color: ${primary()};
+
+                &::before {
+                    transform: translateY(0px) rotate(0deg);
+                }
+
+                &::after {
+                    transform: translateY(0px) rotate(0deg);
+                }
+            }
+
+            .nav-open {
+                background-color: ${secondary(0)};
+
+                &::before {
+                    transform: translateY(11px) rotate(45deg);
+                }
+
+                &::after {
+                    transform: translateY(-11px) rotate(-45deg);
+                }
+            }
+        }
     }
 
     #nav-secondary {

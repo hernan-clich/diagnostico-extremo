@@ -1,13 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { StyledHeader } from '../styles/Header';
+import Sidebar from './Sidebar';
 import { darkLogo } from '../svg/darkLogo.jsx';
 
 export const Header = (props, ref) => {
     const { heroRef, stepsRef, servicesRef, pricingRef, testimonialsRef } = ref;
+    const [width, setWidth] = useState(window.innerWidth);
+    const [navOpen, setNavOpen] = useState(true);
+    const [sidebarClass, setSidebarClass] = useState("");
+
+    useEffect(() => {
+        const setWidthCallback = () => setWidth(window.innerWidth);
+
+        window.addEventListener("resize", setWidthCallback);
+        return () => {
+            window.removeEventListener("resize", setWidthCallback);
+        }
+    }, [setWidth]);
 
     const handleHeroClick = () => {
         window.scrollTo({top: heroRef.current.offsetTop - 90, behavior: 'smooth'});
+        setSidebarClass("");
+        setNavOpen(true);
     }
     
     const handleStepsClick = () => {
@@ -25,7 +40,12 @@ export const Header = (props, ref) => {
     const handleTestimonialClick = () => {
         window.scrollTo({top: testimonialsRef.current.offsetTop - 90, behavior: 'smooth'});
     }
-    
+
+    const handleBurgerClick = () => {
+        setNavOpen(!navOpen);
+        if(navOpen) setTimeout(() => setSidebarClass("side-open"), 10);
+        if(!navOpen) setTimeout(() => setSidebarClass("side-close"), 10);
+    }
 
     return (
         <StyledHeader>
@@ -36,13 +56,27 @@ export const Header = (props, ref) => {
                 <div onClick={ handleHeroClick }>
                     {darkLogo()}
                 </div>
+                {width > 992 ?
                 <div id="nav-links">
                     <button onClick={ handleStepsClick }>Como funciona</button>
                     <button onClick={ handleServicesClick }>Que observamos</button>
                     <button onClick={ handlePricingClick }>Tarifas</button>
                     <button onClick={ handleTestimonialClick }>Testimonios</button>
+                </div> :
+                <div id="burger" onClick={handleBurgerClick}>
+                    <span className={navOpen ? "nav-closed" : "nav-open"}></span>
                 </div>
+                }
             </div>
+                <Sidebar 
+                    setNavOpen={setNavOpen}
+                    stepsFunc={handleStepsClick}
+                    servFunc={handleServicesClick}
+                    pricFunc={handlePricingClick}
+                    testiFunc={handleTestimonialClick}
+                    sidebarClass={sidebarClass}
+                    setSidebarClass={setSidebarClass}
+                />
         </StyledHeader>
     )
 }
