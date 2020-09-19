@@ -1,16 +1,12 @@
 import styled from 'styled-components';
 
 import { primary, secondary, lightText } from './Variables';
-import { screen } from './Media';
 
 export const StyledSidebar = styled.div`
     display: flex;
     z-index: -1;
     opacity: 1;
-
-    ${screen.large`
-        display: none;
-    `}
+    width: 100vw;
     
     .sidebar-overlay#side-open, .sidebar#side-open {
         transform: translateX(0vw);
@@ -20,8 +16,10 @@ export const StyledSidebar = styled.div`
             margin: 1em 0;
             opacity: 1;
 
-            &:hover {
-                color: ${lightText()};
+            @media (hover: hover) {
+                &:hover {
+                    color: ${lightText()};
+                }
             }
         }
     }
@@ -82,5 +80,9 @@ export const StyledSidebar = styled.div`
                 
             }
         }
+    }
+
+    @media (min-width: 992px){
+        display: none;
     }
 `

@@ -1,14 +1,13 @@
 import styled from 'styled-components';
 
 import { secondary, plainWhite } from './Variables';
-import { screen } from './Media';
 
 export const StyledSteps = styled.section`
     width: 100vw;
-    height: 85vh;
+    min-height: 85vh;
     background-color: ${plainWhite()};
     display: flex;
-    flex-flow: row wrap;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 
@@ -29,32 +28,35 @@ export const StyledSteps = styled.section`
 
         .steps-wrapper {
             position: relative;
+            margin-bottom: 2em;
 
             &::before {
                 position: absolute;
                 content: "";
-                height: 90%;
+                height: 100%;
                 width: 5px;
-                top: 5%;
-                left: 3.25%;
-                background-color: ${secondary(0.8)};
+                top: 0%;
+                bottom: 0%;
+                left: 23px;
+                background-color: ${secondary(0.75)};
                 border-radius: 15px;
             }
         }
     }
 
-    ${screen.large`
+    @media (min-width: 992px){
         #steps-img {
             display: block;
             background: url(./assets/steps-car.png) no-repeat;
             background-size: cover;
-            width: 35%;
-            height: 100%;
+            width: 35vw;
+            min-height: 85vh;
+            height: 100vh;
             clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%);
         }
 
         #steps-process {
-            width: 65%;
+            width: 65vw;
 
             h2 {
                 margin-right: 5em;
@@ -62,7 +64,12 @@ export const StyledSteps = styled.section`
 
             .steps-wrapper {
                 margin-right: 5em;
+                &::before {
+                    height: 90%;
+                    top: 5%;
+                    bottom: 5%;
+                }
             }
         }
-    `}
+    }
 `;

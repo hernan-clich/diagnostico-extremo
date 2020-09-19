@@ -14,8 +14,13 @@ export const Button = styled.a`
     font-weight: 700;
     max-width: 50%;
     text-align: center;
-    transition: background-color 100ms ease-in-out;
-    &:hover{
-        background-color: ${props => props.secondary ? secondary(0.75) : primary(0.75)};
+    transition: all 100ms ease-in-out;
+    
+    @media (hover: hover) {
+        &:hover {
+            background-color: ${props => props.secondary ? primary() : secondary()};
+            color: ${props => props.secondary ? secondary() : primary()};
+            box-shadow: inset 0px 0px 0px 3px ${props => props.secondary ? secondary() : primary()};
+        }
     }
 `;

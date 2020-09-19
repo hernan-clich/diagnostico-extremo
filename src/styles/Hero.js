@@ -1,23 +1,15 @@
 import styled from 'styled-components';
 
 import { primary, secondary, plainWhite, outerSpacing } from './Variables';
-import { screen } from './Media';
 
 export const StyledHero = styled.section`
     width: 100vw;
-    height: 200vh;
+    height: 160vh;
     position: relative;
 
     &::after{
         display: none;
-        position: absolute;
-        content: "";
-        right: 0;
-        bottom: 0;
-        width: 100vw;
-        height: 15vh;
-        background-color: ${primary()};
-        clip-path: polygon(0 100%, 100% 0, 100% 100%, 0% 100%);
+        
     }
 
     #hero-main {
@@ -30,7 +22,7 @@ export const StyledHero = styled.section`
         
         div.hero-text-wrapper {
             width: 100%;
-            height: 50%;
+            height: 62.5%;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -48,10 +40,10 @@ export const StyledHero = styled.section`
                 transform: translateX(0%);
                 
                 h1 {
-                    font-size: 2.1rem;
+                    font-size: 1.9rem;
                     color: ${plainWhite()};
                     line-height: 1.25;
-                    margin: 3em 2.5em 1.5em;
+                    margin: 3em 2.5em 0.5em;
                     text-align: center;
                     span {
                         color: ${primary()};
@@ -60,10 +52,10 @@ export const StyledHero = styled.section`
 
                 p {
                     color: ${plainWhite()};
-                    font-size: 1.1rem;
+                    font-size: 1rem;
                     font-weight: 500;
                     line-height: 1.8;
-                    margin: 0.5em 2.5em 2em;
+                    margin: 0.5em 2.5em 1em;
                     text-align: center;
                 }
 
@@ -74,19 +66,42 @@ export const StyledHero = styled.section`
         }
         
         div.hero-img {
-            width: 100%;
-            height: 50%;
-            background: url(./assets/hero-car.png) 50% 30%;
+            width: 100vw;
+            height: 37.5%;
+            background: url(./assets/hero-car.png) 30% 0%;
             background-size: cover;
-            clip-path: polygon(0 15%, 100% 0, 100% 85%, 0% 100%);
+            background-attachment: fixed;
+            clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
         }
     }
 
-    ${screen.large`
+    @media (min-width: 576px){
+        div.hero-text {
+            h1 {
+                font-size: 2.1rem;
+                margin: 3em 2.5em 1.5em;
+            }
+
+            p {
+                font-size: 1.1rem;
+                margin: 0.5em 2.5em 2em;
+            }
+        }
+    }
+    
+    @media (min-width: 992px){
         height: 100vh;
 
         &::after{
             display: block;
+            position: absolute;
+            content: "";
+            right: 0;
+            bottom: 0;
+            width: 100vw;
+            height: 15vh;
+            background-color: ${primary()};
+            clip-path: polygon(0 100%, 100% 0, 100% 100%, 0% 100%);
         }
 
         #hero-main {
@@ -99,7 +114,7 @@ export const StyledHero = styled.section`
                     margin: 5em;
                     justify-content: flex-start;
                     align-items: flex-start;
-                    transform: translateX(5em);
+                    transform: translateX(${outerSpacing()});
                     h1 {
                         margin: 0 0 0.5em;
                         text-align: left;
@@ -117,9 +132,10 @@ export const StyledHero = styled.section`
             div.hero-img {
                 width: 65%;
                 height: 100%;
-                background: url(./assets/hero-car.png) 10% 0%;
+                background: url(./assets/hero-car.png) 10% 0% no-repeat;
+                background-attachment: scroll;
                 clip-path: polygon(45% 0%, 0% 100%, 100% 100%, 100% 0%);
             }
         }
-    `}
+    }
 `

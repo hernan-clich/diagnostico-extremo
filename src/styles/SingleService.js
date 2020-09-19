@@ -40,12 +40,19 @@ export const StyledService = styled.div`
                 text-transform: uppercase;
                 color: ${secondary(0.9)};
                 letter-spacing: 0.06em;
+                margin-top: 0.5em;
             }
 
             p {
                 color: ${secondary(0.8)};
                 font-weight: 400;
             }
+        }
+    }
+
+    @media (min-width: 992px){
+        .serv {
+            min-height: 282px;
         }
     }
 `

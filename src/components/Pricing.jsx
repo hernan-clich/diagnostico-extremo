@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { precios } from '../precios';
 import { Button } from './Button.js';
+import { ButtonDisabled } from './ButtonDisabled.js';
 import { StyledPricing } from '../styles/Pricing';
 
 const Pricing = (props, ref) => {
@@ -27,7 +28,6 @@ const Pricing = (props, ref) => {
 
     const handleClick = e => {
         e.preventDefault();
-        console.log(price);
     }
 
     return (
@@ -43,7 +43,7 @@ const Pricing = (props, ref) => {
                     >
                         <option value="Escaneo">Escaneo</option>
                         <option value="Dominio">Dominio</option>
-                        <option value="Escaneo-Dominio">Escaneo-Dominio</option>
+                        <option value="Escaneo-Dominio">Informe full</option>
                     </select>
                 </div>
                 <div>
@@ -61,10 +61,19 @@ const Pricing = (props, ref) => {
                 </div>
                 <div>
                     <h3>Total</h3>
-                    <span>{Number.isInteger(price) ? '$ '+price : price}</span>
+                    {Number.isInteger(price) ? <span>$ {price} </span>: <p>{price}</p>}
                 </div>
             </div>
-            <Button secondary href="/" onClick={handleClick}>Contratar</Button>
+            <div className="pricing-disclaimers">
+                {type === "Escaneo-Dominio" && <h4>El informe full contiene:</h4>}
+                {type !== "Dominio" && <h4><span>Escaneo computarizado: </span>Revisión mecánica, diagnóstico con scanner, estructura general, prueba de manejo.</h4>}
+                {type !== "Escaneo" && <h4><span>Informe de dominio: </span>Número de chasis y motor, prendas y embargos, inhibición para vender, usufructo o leasing, afectaciones para transferir.</h4>}
+                {(location === "CABA") || (location !== "CABA" && type === "Dominio") ? 
+                    <Button href="/" onClick={handleClick}>Contratar</Button> :
+                    <ButtonDisabled>Contratar</ButtonDisabled>
+                }
+            </div>
+            
         </StyledPricing>
     )
 }

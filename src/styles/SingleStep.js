@@ -1,36 +1,43 @@
 import styled from 'styled-components';
 
-import { primary, secondary } from './Variables';
+import { primary, secondary, outerSpacing } from './Variables';
 
 export const StyledStep = styled.div`
     #steps {
         display: flex;
-        flex-flow: row nowrap;
-        align-items: center;
+        flex-flow: column nowrap;
+        align-items: flex-start;
         color: ${secondary(0.8)};
         padding: 1em 0;
 
-        div:nth-child(1) {
-            background-color: ${primary(1)};
-            height: 50px;
-            min-width: 30px;
-            width: 50px;
-            clip-path: circle(50% at 50% 50%);
-            text-align: center;
-            padding-top: auto;
-            vertical-align: middle;
-            line-height: 50px;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-right: 1.5em;
-        }
+        .steps-img {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
 
-        svg {
-            margin-right: 1.5em;
+            div:nth-child(1) {
+                background-color: ${primary(1)};
+                height: 50px;
+                width: 50px;
+                clip-path: circle(50% at 50% 50%);
+                text-align: center;
+                padding-top: auto;
+                vertical-align: middle;
+                line-height: 50px;
+                font-size: 1.5rem;
+                font-weight: 600;
+                margin-right: 1.5em;
+            }
+
+            svg {
+                margin-right: 1.5em;
+            }
+
         }
 
         .steps-text {
-            max-width: 70%;
+            max-width: 90%;
+            margin: 1.5em 0 0 ${outerSpacing()};
 
             h3 {
                 padding: 0 0 0.5em;
@@ -41,5 +48,19 @@ export const StyledStep = styled.div`
                 font-weight: 400;
             }
         }
+    }
+
+    @media (min-width: 992px){
+        #steps {
+            flex-flow: row nowrap;
+            justify-content: flex-start;
+            align-items: center;
+
+            .steps-text {
+                max-width: 70%;
+                margin: 0;
+                padding: 0.5em 0;
+            }
+        }    
     }
 `

@@ -29,5 +29,6 @@ export const StyledTestimonial = styled.div`
         line-height: 119.69%;
         letter-spacing: 0.015em;
         margin: 0.25em 1.25em 1em;
+        padding-bottom: 1em;
     }
 `

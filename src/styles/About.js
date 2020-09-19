@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 import { primary, secondary, plainWhite, outerSpacing } from './Variables';
-import { screen } from './Media';
 
 export const StyledAbout = styled.section`
     width: 100vw;
@@ -41,7 +40,7 @@ export const StyledAbout = styled.section`
             width: 100%;
             min-height: 300px;
             position: relative;
-            &::after{
+            &::after {
                 position: absolute;
                 content: "";
                 top: 5%;
@@ -49,8 +48,8 @@ export const StyledAbout = styled.section`
                 background: url(./assets/melli.png) 55% 35% no-repeat;
                 background-size: 150%;
                 border-radius: 5px;
-                min-width: 320px;
-                width: 50%;
+                min-width: 220px;
+                width: 80%;
                 min-height: 225px;
                 height: 60%;
                 transform: translateX(-50%);
@@ -59,13 +58,12 @@ export const StyledAbout = styled.section`
 
         #about-text {
             background-color: ${secondary()};
-            min-width: 496px;
             width: 100%;
             min-height: 500px;
 
             p {
                 font-size: 1rem;
-                margin: 5% ${outerSpacing()} 1em;
+                margin: 5% 2em 1em;
                 text-align: justify;
                 line-height: 197.69%;
                 font-weight: 500;
@@ -74,20 +72,34 @@ export const StyledAbout = styled.section`
             
         }
 
-        ${screen.medium`
+        @media (max-width: 321px){
+            #about-text {
+                min-height: 580px;
+            }
+        }
+
+        @media (min-width: 768px){
             #about-text {
                 min-height: 350px;
             }
-        `}
+        }
 
-        ${screen.large`
+        @media (min-width: 992px){
             #about-img {
                 width: 50%;
+                &::after {
+                    min-width: 430px;
+                }
             }
+            
             #about-text {
+                min-width: 496px;
                 width: 50%;
                 min-height: 300px;
+                p {
+                    margin: 5% ${outerSpacing()} 1em;
+                }
             }
-        `}
+        }
     }
 `;

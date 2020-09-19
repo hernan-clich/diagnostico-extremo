@@ -10,6 +10,8 @@ export const StyledFooter = styled.footer`
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
+    padding: 0 2em;
+    text-align: center;
 
     button, p, a {
         text-transform: uppercase;
@@ -22,15 +24,21 @@ export const StyledFooter = styled.footer`
         border: none;
         font-family: 'Ubuntu', sans-serif;
         font-size: 0.9rem;
+        
+    }
+
+    button,a {
         cursor: pointer;
     }
 
     button:focus {
-            outline: none;
+        outline: none;
     }
 
-    a:hover {
-        color: ${primary()};
+    @media (hover: hover) {
+        button:hover, a:hover {
+            color: ${primary()};
+        }
     }
 
     .footer-icons {
@@ -51,15 +59,14 @@ export const StyledFooter = styled.footer`
             }
         }
 
-        svg:hover {
-            transform: scale(1.1);
+        @media (hover: hover) {
+            svg:hover {
+                transform: scale(1.1);
 
-            path {
-                fill: ${primary()};
-                
-            }
-        } 
-
+                path {
+                    fill: ${primary()};
+                }
+            } 
+        }
     }
-
 `

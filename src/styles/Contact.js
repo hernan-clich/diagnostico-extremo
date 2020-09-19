@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 import { primary, secondary } from './Variables';
-import { screen } from './Media';
 
 export const StyledContact = styled.section`
     width: 100vw;
@@ -10,18 +9,22 @@ export const StyledContact = styled.section`
     background-color: ${primary()};
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
 
     #contact-wrapper {
         display: flex;
-        align-self: center;
         flex-flow: column wrap;
-        width: 80%;
+        justify-content: center;
+        align-content: center;
+        width: 100%;
         height: 70%;
+        margin: 3em 0;
         
         div {
-            padding: 1em 5em 0;
+            margin-bottom: 1em;
+            padding: 1em 1em 0;
             width: 90%;
+            text-align: center;
 
             h3 {
                 text-transform: uppercase;
@@ -42,7 +45,7 @@ export const StyledContact = styled.section`
         display: flex;
         flex-flow: column nowrap;
         width: 90%;
-        padding: 1em 4em;
+        padding: 1em;
 
         input {
             height: 2.5em;
@@ -62,17 +65,32 @@ export const StyledContact = styled.section`
         }
     }
 
-    ${screen.large`
+    @media (min-width: 576px){
+        #contact-wrapper {
+            div {
+                padding: 1em 5em 0;
+            }
+
+            form {
+                padding: 1em 4em;
+            }
+        }
+    }
+
+    @media (min-width: 992px){
         #contact-wrapper {
             flex-flow: row wrap;
+            width: 80%;
 
             div {
                 width: 50%;
+                margin-bottom: 0em;
+                text-align: left;
             }
 
             form {
                 width: 50%;
             }
         }
-    `}
+    }
 `

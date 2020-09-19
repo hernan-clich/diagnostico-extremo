@@ -36,8 +36,28 @@ export const StyledTestimonials = styled.section`
         min-height: 80%;
         height: auto;
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(436px, 1fr));
-        grid-gap: 50px;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        grid-gap: 65px;
         justify-content: center;
+    }
+
+    @media (min-width: 576px){
+        #testi-wrapper {
+            grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+        }
+    }
+
+    @media (min-width: 768px){
+        #testi-wrapper {
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        }
+    }
+
+    @media (min-width: 992px){
+        #testi-wrapper {
+            grid-template-columns: repeat(auto-fill, minmax(436px, 1fr));
+            grid-gap: 50px;
+            margin: auto;
+        }
     }
 `

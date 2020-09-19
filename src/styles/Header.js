@@ -1,44 +1,88 @@
 import styled from 'styled-components';
 
-import { primary, secondary, plainWhite, outerSpacing } from './Variables';
+import {
+    primary,
+    secondary,
+    plainWhite,
+    outerSpacing
+} from './Variables';
 
-export const StyledHeader = styled.header`
-    width: 100vw;
+export const StyledHeader = styled.header `
+    max-width: 100vw;
     height: 15vh;
+    top: 0;
     display: flex;
     flex-direction: column;
     position: fixed;
+    background-color: ${secondary(0.55)};
     z-index: 5;
+    transition: all 500ms ease-in-out;
 
     #nav-primary {
         height: 70%;
-        background-color: ${secondary(0.75)};
+        /* background-color: ${secondary(0.75)}; */
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding: 0 ${outerSpacing()};
+        padding: 0 1.5em;
+        position: relative;
+        transition: background-color 500ms ease-in-out;
 
         svg {
             transform: scale(0.85);
             cursor: pointer;
         }
 
-        button {
-            color: ${primary()};
-            cursor: pointer;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-weight: 700;
-            margin: 0 1.5em;
-            background-color: ${primary(0)};
-            border: none;
-            font-family: 'Ubuntu', sans-serif;
-            font-size: 0.9rem;
-        }
+        #nav-links {
+            padding: 0.2em 0;
 
-        button:focus {
-            outline: none;
+            button {
+                color: ${primary()};
+                cursor: pointer;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-weight: 700;
+                margin: 0 1.5em;
+                padding: 0.2em 0;
+                background-color: ${primary(0)};
+                border: none;
+                font-family: 'Ubuntu', sans-serif;
+                font-size: 0.9rem;
+                position: relative;
+                transition: all 100ms ease-in-out;
+
+                &::after {
+                    position: absolute;
+                    content: "";
+                    height: 0px;
+                    width: 50%;
+                    bottom: -10%;
+                    left: 25%;
+                    right: 25%;
+                    background-color: ${primary(0)};
+                    transition: all 200ms ease-in-out;
+                }
+
+                &:focus {
+                    outline: none;
+                }
+
+                @media (hover: hover) {
+                    &:hover {
+                        color: ${plainWhite()};
+
+                        &::after {
+                            background-color: ${plainWhite()};
+                            height: 2px;
+                            width: 100%;
+                            left: 0%;
+                            right: 0%;
+                            bottom: -20%;
+                        }
+                    }
+                }
+            }
         }
 
         #burger {
@@ -105,12 +149,13 @@ export const StyledHeader = styled.header`
     }
 
     #nav-secondary {
+        width: 100vw;
         height: 30%;
         background-color: rgba(128, 128, 128, 1);
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
         align-items: center;
-        padding-right: ${outerSpacing()};
+        overflow-x: hidden;
 
         div {
             text-transform: uppercase;
@@ -122,6 +167,59 @@ export const StyledHeader = styled.header`
             color: ${primary()};
             cursor: pointer;
             text-decoration: none;
+        }
+    }
+    
+    #fixed-whatsapp { 
+        svg {
+            position: fixed;
+            bottom: 5vh;
+            right: 2.5vw;
+            display: block;
+            max-width: 70px;
+            max-height: 70px;
+            transform: translateX(250%);
+            transition: transform 400ms ease-in;
+
+            circle, path {
+                transition: all 300ms ease-in;
+            }
+        }
+    }
+
+    #fixed-whatsapp {
+        svg.slide-in {
+            transform: translateX(0%);
+            @media (hover: hover) {
+                &:hover {
+                    transform: scale(1.15);
+                }
+
+                &:hover > path {
+                    fill: ${primary()};
+                }
+
+                &:hover > circle {
+                    fill: ${secondary()};
+                }
+            }
+        }
+    }
+
+    @media (min-width: 576px){
+        #nav-primary {
+            padding: 0 2.5em;
+        }
+
+        #nav-secondary {
+            justify-content: flex-end;
+            padding-right: ${outerSpacing()};
+        }
+    }
+
+    @media (min-width: 768px){
+        #nav-primary {
+            padding: 0 ${outerSpacing()};
         }
     }
 `;
