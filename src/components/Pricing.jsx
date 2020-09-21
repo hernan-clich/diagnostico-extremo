@@ -10,26 +10,32 @@ const Pricing = (props, ref) => {
     const [price, setPrice] = useState("");
     const [type, setType] = useState("Escaneo");
     const [location, setLocation] = useState("CABA");
+    const [mpLink, setMpLink] = useState(precios.links["inspeccion"]);
 
     useEffect(() => {
         const priceSetter = (typ, loc) => {
-            if(loc === "Otros" && typ !== "Dominio"){
+            if(loc === "Otros" && typ !== "Dominio") {
                 setPrice(precios.Otros);
             } else {
-                if(typ === "Escaneo") setPrice(precios.zonas[loc]);
-                if(typ === "Dominio") setPrice(precios.Dominio);
-                if(typ === "Escaneo-Dominio") setPrice(precios.zonas[loc] + precios.Dominio);
+                if(typ === "Escaneo") {
+                    setPrice(precios.zonas[loc]);
+                    setMpLink(precios.links[typ]);
+                }
+                if(typ === "Dominio") {
+                    setPrice(precios.Dominio);
+                    setMpLink(precios.links[typ]);
+                }
+                if(typ === "informeFull") {
+                    setPrice(precios.zonas[loc] + precios.Dominio + 1);
+                    setMpLink(precios.links[typ]);
+                }
             }
         }
 
         priceSetter(type, location);
 
     }, [type, location]);
-
-    const handleClick = e => {
-        e.preventDefault();
-    }
-
+    
     return (
         <StyledPricing ref={ref}>
             <h2>Tarifas</h2>
@@ -43,7 +49,7 @@ const Pricing = (props, ref) => {
                     >
                         <option value="Escaneo">Escaneo</option>
                         <option value="Dominio">Dominio</option>
-                        <option value="Escaneo-Dominio">Informe full</option>
+                        <option value="informeFull">Informe full</option>
                     </select>
                 </div>
                 <div>
@@ -65,12 +71,12 @@ const Pricing = (props, ref) => {
                 </div>
             </div>
             <div className="pricing-disclaimers">
-                {type === "Escaneo-Dominio" && <h4>El informe full contiene:</h4>}
+                {type === "informeFull" && <h4>El informe full contiene:</h4>}
                 {type !== "Dominio" && <h4><span>Escaneo computarizado: </span>Revisión mecánica, diagnóstico con scanner, estructura general, prueba de manejo.</h4>}
                 {type !== "Escaneo" && <h4><span>Informe de dominio: </span>Número de chasis y motor, prendas y embargos, inhibición para vender, usufructo o leasing, afectaciones para transferir.</h4>}
-                {(location === "CABA") || (location !== "CABA" && type === "Dominio") ? 
-                    <Button href="/" onClick={handleClick}>Contratar</Button> :
-                    <ButtonDisabled>Contratar</ButtonDisabled>
+                {(location === "CABA") || (location === "Otros" && type === "Dominio") ? 
+                    <Button as="a" href={mpLink} rel="external noopener noreferrer" target="_blank">Contratar</Button> :
+                    <ButtonDisabled as="a">Contratar</ButtonDisabled>
                 }
             </div>
             

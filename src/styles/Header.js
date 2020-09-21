@@ -179,7 +179,7 @@ export const StyledHeader = styled.header `
             max-width: 70px;
             max-height: 70px;
             transform: translateX(250%);
-            transition: transform 400ms ease-in;
+            transition: transform 600ms ease-in;
 
             circle, path {
                 transition: all 300ms ease-in;

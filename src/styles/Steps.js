@@ -47,7 +47,7 @@ export const StyledSteps = styled.section`
     @media (min-width: 992px){
         #steps-img {
             display: block;
-            background: url(./assets/steps-car.png) no-repeat;
+            background: url(./assets/steps-car.png) 15% 50% no-repeat;
             background-size: cover;
             width: 35vw;
             min-height: 85vh;

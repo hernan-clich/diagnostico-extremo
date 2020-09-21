@@ -2,8 +2,9 @@ import styled from 'styled-components';
 
 import { primary, secondary, plainWhite} from '../styles/Variables'
 
-export const Button = styled.a`
+export const Button = styled.div`
     cursor: pointer;
+    font-family: 'Ubuntu', sans-serif;
     text-decoration: none;
     margin: 1em 0;
     border-radius: 5px;
@@ -12,8 +13,10 @@ export const Button = styled.a`
     padding: 1em;
     text-transform: uppercase;
     font-weight: 700;
-    max-width: 50%;
+    font-size: 1rem;
+    max-width: ${props => props.as === "a" ? "50%" : "100%"};
     text-align: center;
+    border: none;
     transition: all 100ms ease-in-out;
     
     @media (hover: hover) {

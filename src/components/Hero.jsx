@@ -11,7 +11,7 @@ const Hero = (props, ref) => {
                     <div className="hero-text">
                         <h1>Diagnosticamos tu próximo auto usado <span>en el domicilio </span>del vendedor</h1>
                         <p>Chequeamos y escaneamos el auto previo a su compra,  para evitar sorpresas inesperadas.</p>
-                        <Button href="/">Llamanos</Button>
+                        <Button as="a" href="https://wa.me/5491166681006" rel="noopener noreferrer"target="_blank">Llamanos</Button>
                     </div>
                 </div>
                 <div className="hero-img"/>

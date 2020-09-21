@@ -20,7 +20,7 @@ export const StyledContact = styled.section`
         height: 70%;
         margin: 3em 0;
         
-        div {
+        .contact-text {
             margin-bottom: 1em;
             padding: 1em 1em 0;
             width: 90%;
@@ -44,20 +44,80 @@ export const StyledContact = styled.section`
     form {
         display: flex;
         flex-flow: column nowrap;
+        justify-content: flex-start;
         width: 90%;
         padding: 1em;
 
+        div.input-wrapper  {
+            position: relative;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        label {
+            position: absolute;
+            top: 1.8em;
+            left: 1em;
+            font-size: 0.8rem;
+            font-weight: 600;
+            pointer-events: none;
+            color: ${secondary(0.6)};
+            transition: all 350ms ease;
+        }
+
         input {
             height: 2.5em;
-        }        
+        }
 
         input, textarea {
-            margin: 0.5em 0;
+            margin: 1em 0;
             border-radius: 5px;
             border: none;
             font-family: 'Ubuntu', sans-serif;
             padding: 1em;
             font-weight: 600;
+            width: 100%;
+
+            &:focus + label {
+                top: -0.5em;
+                color: ${secondary()};
+                font-size: 0.75rem;
+            }
+        }
+
+        .input-not-empty {
+            + label {
+                top: -0.5em;
+                color: ${secondary()};
+                font-size: 0.75rem;
+            }
+        }
+
+        .input-valid {
+            border: 3px solid rgb(0, 156, 0);
+            outline: none;
+        }
+
+        .input-invalid {
+            border: 3px solid rgb(168, 0, 0);
+            outline: none;
+        }
+
+        p {
+            margin: 0;
+            color: rgb(190, 0, 0);
+            font-weight: bolder;
+            font-style: oblique;
+            font-size: 0.9rem;
+            opacity: 0;
+            height: 0;
+        }
+
+        .input-invalid ~ p {
+            margin-bottom: 1.3em;
+            opacity: 1;
+            height: auto;
         }
 
         a {
@@ -67,7 +127,7 @@ export const StyledContact = styled.section`
 
     @media (min-width: 576px){
         #contact-wrapper {
-            div {
+            .contact-text {
                 padding: 1em 5em 0;
             }
 
@@ -82,7 +142,7 @@ export const StyledContact = styled.section`
             flex-flow: row wrap;
             width: 80%;
 
-            div {
+            .contact-text {
                 width: 50%;
                 margin-bottom: 0em;
                 text-align: left;

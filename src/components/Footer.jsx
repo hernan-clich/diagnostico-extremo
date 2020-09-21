@@ -27,12 +27,12 @@ const Footer = (props, ref) => {
             <button onClick={handleServicesClick}>Qué observamos</button>
             <button onClick={handlePricingClick}>Tarifas</button>
             <div className="footer-icons">
-                <div><a href="/">{footerWa()}</a></div>
-                <div><a href="/">{footerFb()}</a></div>
-                <div><a href="/">{footerIg()}</a></div>
-                <div><a href="/">{footerEmail()}</a></div>
+                <div><a href="https://wa.me/5491138191735" rel="external noopener noreferrer" target="_blank">{footerWa()}</a></div>
+                <div><a href="https://www.facebook.com/diagnostico.extremo" rel="external noopener noreferrer" target="_blank">{footerFb()}</a></div>
+                <div><a href="https://www.instagram.com/diagnostico.extremo/" rel="external noopener noreferrer" target="_blank">{footerIg()}</a></div>
+                <div><a href="mailto: info@diagnosticoextremo.com.ar" rel="external noopener noreferrer" target="_blank">{footerEmail()}</a></div>
             </div>
-            <a href="https://github.com/hernan-clich" target="_blank" rel="external noreferrer noopener nofollow">Sitio por Hernan Clich</a>
+            <a href="https://github.com/hernan-clich" target="_blank" rel="external noreferrer noopener">Sitio por Hernan Clich</a>
             <p>COPYRIGHT © DIAGNOSTICO EXTREMO</p>
         </StyledFooter>
     )
