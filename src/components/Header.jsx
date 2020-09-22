@@ -5,7 +5,7 @@ import Sidebar from './Sidebar';
 import { darkLogo } from '../svg/darkLogo.jsx';
 import { secondary } from '../styles/Variables';
 
-export const Header = (props, ref) => {
+export const Header = ({setBodyOverflowY}, ref) => {
     // Destructure all external refs
     const { heroRef, stepsRef, servicesRef, pricingRef, testimonialsRef } = ref;
     // All state variables
@@ -103,28 +103,41 @@ export const Header = (props, ref) => {
         window.scrollTo({top: heroRef.current.offsetTop - 90, behavior: 'smooth'});
         setSidebarClass("");
         setNavOpen(true);
+        setBodyOverflowY("visible");
     }
     
     const handleStepsClick = () => {
         window.scrollTo({top: stepsRef.current.offsetTop - 90, behavior: 'smooth'});
+        setBodyOverflowY("visible");
     }
 
     const handleServicesClick = () => {
         window.scrollTo({top: servicesRef.current.offsetTop - 90, behavior: 'smooth'});
+        setBodyOverflowY("visible");
     }
 
     const handlePricingClick = () => {
         window.scrollTo({top: pricingRef.current.offsetTop - 90, behavior: 'smooth'});
+        setBodyOverflowY("visible");
     }
 
     const handleTestimonialClick = () => {
         window.scrollTo({top: testimonialsRef.current.offsetTop - 90, behavior: 'smooth'});
+        setBodyOverflowY("visible");
     }
 
     const handleBurgerClick = () => {
         setNavOpen(!navOpen);
-        if(navOpen) setTimeout(() => setSidebarClass("side-open"), 10);
-        if(!navOpen) setTimeout(() => setSidebarClass("side-close"), 10);
+        if(navOpen) {
+            setTimeout(() => setSidebarClass("side-open"), 10);
+            setBodyOverflowY("hidden");
+            fixedWaRef.current.classList.remove('slide-in');
+        }
+        if(!navOpen) {
+            setTimeout(() => setSidebarClass("side-close"), 10);
+            setBodyOverflowY("visible");
+            fixedWaRef.current.classList.add('slide-in');
+        }
     }
 
     return (

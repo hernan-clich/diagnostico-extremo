@@ -10,5 +10,6 @@ export const GlobalStyles = createGlobalStyle`
   html, body {
     font-family: 'Ubuntu', sans-serif;
     overflow-x: hidden;
+    overflow-y: ${props => props.overflowY};
   }
 `;

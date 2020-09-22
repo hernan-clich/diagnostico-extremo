@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useState, useRef } from 'react';
 
 import {GlobalStyles} from '../styles/GlobalStyles'
 import Header from './Header';
@@ -12,7 +12,7 @@ import Contact from './Contact';
 import Footer from './Footer';
 
 function App() {
-
+  const [bodyOverflowY, setBodyOverflowY] = useState("visible");
   const stepsRef = useRef(null);
   const servicesRef = useRef(null);
   const pricingRef = useRef(null);
@@ -21,8 +21,9 @@ function App() {
 
   return (
     <>
-      <GlobalStyles/>
+      <GlobalStyles overflowY={bodyOverflowY} />
       <Header
+        setBodyOverflowY={setBodyOverflowY}
         ref={{
           heroRef,
           servicesRef,
