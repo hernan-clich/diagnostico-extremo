@@ -177,4 +177,31 @@ export const StyledHero = styled.section`
         }
     }
 
+    /* Ipad Pro */
+    @media only screen 
+    and (min-width: 1024px) 
+    and (max-height: 1366px) 
+    and (orientation: portrait) 
+    and (-webkit-min-device-pixel-ratio: 1.5) {
+        height: 60vh;
+        #hero-main 
+        div.hero-text-wrapper 
+        div.hero-text {
+            transform: translate(${outerSpacing()}, 20%);
+        }
+    }
+
+    @media only screen 
+    and (min-width: 1024px) 
+    and (max-height: 1366px) 
+    and (orientation: landscape) 
+    and (-webkit-min-device-pixel-ratio: 1.5) {
+        height: 75vh;
+        #hero-main 
+        div.hero-text-wrapper 
+        div.hero-text {
+            transform: translate(${outerSpacing()}, 15%);
+        }
+    }
+
 `

@@ -123,4 +123,21 @@ export const StyledPricing = styled.section`
             }
         }
     }
+
+    /* Ipad Pro */
+    @media only screen 
+    and (min-width: 1024px) 
+    and (max-height: 1366px) 
+    and (orientation: portrait) 
+    and (-webkit-min-device-pixel-ratio: 1.5) {
+        min-height: 70vh;
+    }
+
+    @media only screen 
+    and (min-width: 1024px) 
+    and (max-height: 1366px) 
+    and (orientation: landscape) 
+    and (-webkit-min-device-pixel-ratio: 1.5) {
+        min-height: 65vh;
+    }
 `

@@ -75,4 +75,21 @@ export const StyledFooter = styled.footer`
     and (max-device-width: 361px) {
         min-height: 80vh;
     }
+
+    /* Ipad Pro */
+    @media only screen 
+    and (min-width: 1024px) 
+    and (max-height: 1366px) 
+    and (orientation: portrait) 
+    and (-webkit-min-device-pixel-ratio: 1.5) {
+        min-height: 30vh;
+    }
+
+    @media only screen 
+    and (min-width: 1024px) 
+    and (max-height: 1366px) 
+    and (orientation: landscape) 
+    and (-webkit-min-device-pixel-ratio: 1.5) {
+        min-height: 40vh;
+    }
 `

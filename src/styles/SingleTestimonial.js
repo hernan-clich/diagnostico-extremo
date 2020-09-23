@@ -31,4 +31,21 @@ export const StyledTestimonial = styled.div`
         margin: 0.25em 1.25em 1em;
         padding-bottom: 1em;
     }
+
+    /* Ipad Pro */
+    @media only screen 
+    and (min-width: 1024px) 
+    and (max-height: 1366px) 
+    and (orientation: portrait) 
+    and (-webkit-min-device-pixel-ratio: 1.5) {
+        min-height: 15vh;
+    }
+
+    @media only screen 
+    and (min-width: 1024px) 
+    and (max-height: 1366px) 
+    and (orientation: landscape) 
+    and (-webkit-min-device-pixel-ratio: 1.5) {
+        min-height: 25vh;
+    }
 `
