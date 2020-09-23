@@ -69,4 +69,10 @@ export const StyledFooter = styled.footer`
             } 
         }
     }
+
+    /* For portrait small phones */
+    @media screen and (orientation:portrait) 
+    and (max-device-width: 361px) {
+        min-height: 80vh;
+    }
 `

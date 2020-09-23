@@ -40,7 +40,7 @@ export const Header = ({setBodyOverflowY}, ref) => {
             let currentScrollPos = window.pageYOffset;
 
             if (prevScrollpos > currentScrollPos) headerRef.current.style.top = "0";
-            else headerRef.current.style.top = `-15vh`;
+            else headerRef.current.style.top = `-30vh`;
             
             setPrevScrollpos(currentScrollPos);
         }

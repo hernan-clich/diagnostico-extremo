@@ -85,4 +85,15 @@ export const StyledSidebar = styled.div`
     @media (min-width: 992px){
         display: none;
     }
+
+    /* For landscape phones */
+    @media screen and (orientation:landscape) 
+    and (max-device-height: 412px) {
+        .sidebar div {
+            margin-top: 30vh;
+            li {
+                font-size: 1.3rem;
+            }
+        }
+    }
 `

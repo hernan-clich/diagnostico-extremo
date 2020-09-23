@@ -61,6 +61,8 @@ export const StyledHero = styled.section`
 
                 a {
                     width: 100%;
+                    vertical-align: text-top;
+                    padding: 1em;
                 }
             }
         }
@@ -138,4 +140,41 @@ export const StyledHero = styled.section`
             }
         }
     }
+
+    /* For landscape phones */
+    @media screen and (orientation:landscape) 
+    and (max-device-height: 410px) {
+        
+        #hero-main 
+        div.hero-text-wrapper 
+        div.hero-text {
+            h1 {
+                font-size: 1.3rem;
+                margin: 35vh 2.5em 0.5em;
+            }
+            a {
+                height: 10vh;
+                width: 30%;
+                padding-bottom: 2em;
+            }
+        }
+    }
+
+    /* For landscape Galaxy Fold */
+    @media screen and (orientation:landscape) 
+    and (max-device-height: 281px) {
+        
+        #hero-main 
+        div.hero-text-wrapper 
+        div.hero-text {
+            h1 {
+                font-size: 1.3rem;
+                margin: 35vh 2.5em 0.5em;
+            }
+            a {
+                margin: 0 0 1em;
+            }
+        }
+    }
+
 `

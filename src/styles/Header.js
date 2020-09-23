@@ -16,7 +16,7 @@ export const StyledHeader = styled.header `
     position: fixed;
     background-color: ${secondary(0.55)};
     z-index: 5;
-    transition: all 500ms ease-in-out;
+    transition: all 900ms ease-in-out;
 
     #nav-primary {
         height: 70%;
@@ -221,5 +221,11 @@ export const StyledHeader = styled.header `
         #nav-primary {
             padding: 0 ${outerSpacing()};
         }
+    }
+
+    /* For landscape phones */
+    @media screen and (orientation:landscape) 
+    and (max-device-height: 412px) {
+        height: 30vh;
     }
 `;
