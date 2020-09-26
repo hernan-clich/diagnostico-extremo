@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledTestimonial = styled.div`
-    min-height: 30vh;
+    min-height: 20vh;
     height: auto;
     width: 100%;
     background-color: rgba(236,236,236,.9);

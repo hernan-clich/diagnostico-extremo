@@ -26,12 +26,12 @@ export const Header = ({setBodyOverflowY}, ref) => {
 
     useEffect(() => {
         const setWidthCallback = () => setWidth(window.innerWidth);
-
+        
         window.addEventListener("resize", setWidthCallback);
         return () => {
             window.removeEventListener("resize", setWidthCallback);
         }
-    }, [setWidth]);
+    }, [setWidth, heroRef]);
 
     // Event listener to hide navbar when scrolling down
 
@@ -85,7 +85,7 @@ export const Header = ({setBodyOverflowY}, ref) => {
 
     useEffect(() => {
         const scrollFunction = () => {
-           if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+           if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
                 fixedWaRef.current.classList.add('slide-in');
            } else {
                 fixedWaRef.current.classList.remove('slide-in');

@@ -147,7 +147,8 @@ const Contact = () => {
             <div id="contact-wrapper">
                 <div className="contact-text">
                     <h3>Consultanos</h3>
-                    <p>Hacenos tu consulta completando el siguiente formulario.<br/>Rellena los campos lo más detalladamente posible para que podamos brindarte la mejor atención.</p>
+                    <p>Para nosotros la prioridad es explicarte nuestro servicio y sacarte todas las dudas.</p>
+                    <p style={{marginTop: "1em"}}>Completa este formulario y te llamaremos para asesorarte y coordinar una visita.</p>
                 </div>
                 <iframe 
                     title="hidden iframe" 

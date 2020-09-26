@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
+import { motion } from 'framer-motion';
 
 import { precios } from '../precios';
 import { Button } from './Button.js';
@@ -11,6 +13,12 @@ const Pricing = (props, ref) => {
     const [type, setType] = useState("Escaneo");
     const [location, setLocation] = useState("CABA");
     const [mpLink, setMpLink] = useState(precios.links["inspeccion"]);
+
+    const [priceMainRef, priceInView] = useInView({
+        threshold: 0.05,
+        triggerOnce: true, 
+        rootMargin: "200px 0px"
+      });
 
     useEffect(() => {
         const priceSetter = (typ, loc) => {
@@ -39,7 +47,19 @@ const Pricing = (props, ref) => {
     return (
         <StyledPricing ref={ref}>
             <h2>Tarifas</h2>
-            <div className="pricing-wrapper">
+            <motion.div 
+                className="pricing-wrapper"
+                ref={priceMainRef}
+                initial={{
+                    y: 100,
+                    opacity: 0
+                }}
+                animate={{
+                    y: priceInView ? 0 : 200,
+                    opacity: priceInView ? 1 : 0,
+                }}
+                transition={{ type: "spring", stiffness: 30 }}
+            >
                 <div>
                     <h3>Servicio</h3>
                     <select 
@@ -67,13 +87,14 @@ const Pricing = (props, ref) => {
                 </div>
                 <div>
                     <h3>Total</h3>
-                    {Number.isInteger(price) ? <span>$ {price} </span>: <p>{price}</p>}
+                    {Number.isInteger(price) ? <span>$ {price} </span>: <p>{price}</p>
+                        }
                 </div>
-            </div>
+            </motion.div>
             <div className="pricing-disclaimers">
-                {type === "informeFull" && <h4>El informe full contiene:</h4>}
-                {type !== "Dominio" && <h4><span>Escaneo computarizado: </span>Revisión mecánica, diagnóstico con scanner, estructura general, prueba de manejo.</h4>}
-                {type !== "Escaneo" && <h4><span>Informe de dominio: </span>Número de chasis y motor, prendas y embargos, inhibición para vender, usufructo o leasing, afectaciones para transferir.</h4>}
+                {type === "informeFull" && <h4>El informe full comprende:</h4>}
+                {type !== "Dominio" && <h4><span>Escaneo computarizado: </span>Incluye revisión mecánica, diagnóstico con scanner, estructura general, prueba de manejo.</h4>}
+                {type !== "Escaneo" && <h4><span>Informe de dominio: </span>Incluye número de chasis y motor, prendas y embargos, inhibición para vender, usufructo o leasing, afectaciones para transferir.</h4>}
                 {(location === "CABA") || (location === "Otros" && type === "Dominio") ? 
                     <Button as="a" href={mpLink} rel="external noopener noreferrer" target="_blank">Contratar</Button> :
                     <ButtonDisabled as="a">Contratar</ButtonDisabled>

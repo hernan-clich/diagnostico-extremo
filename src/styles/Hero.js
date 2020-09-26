@@ -70,7 +70,7 @@ export const StyledHero = styled.section`
         div.hero-img {
             width: 100vw;
             height: 37.5%;
-            background: url(./assets/hero-car.png) 30% 0%;
+            background: 30% 0%;
             background-size: cover;
             background-attachment: fixed;
             clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
@@ -134,7 +134,7 @@ export const StyledHero = styled.section`
             div.hero-img {
                 width: 65%;
                 height: 100%;
-                background: url(./assets/hero-car.png) 10% 0% no-repeat;
+                background: 10% 0% no-repeat;
                 background-attachment: scroll;
                 clip-path: polygon(45% 0%, 0% 100%, 100% 100%, 100% 0%);
             }

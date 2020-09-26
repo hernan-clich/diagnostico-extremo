@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { lightText } from './Variables';
+import { lightText, secondary } from './Variables';
 
 export const StyledTestimonials = styled.section`
     width: 100vw;
@@ -8,9 +8,10 @@ export const StyledTestimonials = styled.section`
     position: relative;
     z-index: 2;
     overflow: hidden;
+    background-color: ${secondary(0.7)};
 
-    &::before {
-        background: url(./assets/testi_bg.png) no-repeat;
+    #testi-bg { 
+        background: no-repeat;
         background-size: cover;
         content: "";
         position: absolute;
@@ -20,7 +21,12 @@ export const StyledTestimonials = styled.section`
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-    }    
+    }
+
+    .testi-revealed#testi-bg { 
+        background: url(./assets/testi_bg.png) no-repeat;
+        background-size: cover;
+    }
 
     h2 {
         padding: 1em 0;
@@ -56,7 +62,7 @@ export const StyledTestimonials = styled.section`
     @media (min-width: 992px){
         #testi-wrapper {
             grid-template-columns: repeat(auto-fill, minmax(436px, 1fr));
-            grid-gap: 50px;
+            grid-gap: 40px;
             margin: auto;
         }
     }

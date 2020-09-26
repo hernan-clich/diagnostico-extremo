@@ -45,14 +45,21 @@ export const StyledAbout = styled.section`
                 content: "";
                 top: 5%;
                 left: 50%;
-                background: url(./assets/melli.png) 55% 35% no-repeat;
-                background-size: 150%;
+                background: 55% 35% no-repeat;
+                background-size: 100%;
                 border-radius: 5px;
                 min-width: 220px;
                 width: 80%;
                 min-height: 225px;
                 height: 60%;
                 transform: translateX(-50%);
+            }
+        }
+
+        #about-img.about-revealed {
+            &::after {
+                background: url(./assets/melli.png) 55% 35% no-repeat;
+                background-size: 100%;
             }
         }
 
@@ -64,7 +71,7 @@ export const StyledAbout = styled.section`
             p {
                 font-size: 1rem;
                 margin: 5% 2em 1em;
-                text-align: justify;
+                text-align: center;
                 line-height: 197.69%;
                 font-weight: 500;
                 color: ${plainWhite(0.8)};
@@ -98,6 +105,7 @@ export const StyledAbout = styled.section`
                 min-height: 300px;
                 p {
                     margin: 5% ${outerSpacing()} 1em;
+                    text-align: left;
                 }
             }
         }

@@ -20,7 +20,6 @@ export const StyledHeader = styled.header `
 
     #nav-primary {
         height: 70%;
-        /* background-color: ${secondary(0.75)}; */
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -151,7 +150,7 @@ export const StyledHeader = styled.header `
     #nav-secondary {
         width: 100vw;
         height: 30%;
-        background-color: rgba(128, 128, 128, 1);
+        background-color: rgba(80, 80, 80, 1);
         display: flex;
         justify-content: center;
         align-items: center;

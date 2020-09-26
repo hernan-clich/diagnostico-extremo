@@ -1,4 +1,6 @@
 import React from 'react';
+import { useInView } from 'react-intersection-observer';
+import { motion } from 'framer-motion';
 
 import { StyledSteps } from '../styles/Steps';
 import { Step } from './SingleStep';
@@ -7,10 +9,24 @@ import { stepsScanner } from '../svg/stepsScanner.js';
 import { stepsReport } from '../svg/stepsReport.js';
 
 const Steps = (props, ref) => {
+
+    const stepsBgImgUrl = {
+        backgroundImage: 'url(./assets/steps-car.png)'
+    };
+    
+    const [stepsWrapperRef, stepsInView] = useInView({
+        threshold: 0.15,
+        triggerOnce: true, 
+        rootMargin: "300px 0px"
+      });
+
     return (
         <StyledSteps ref={ref}>
-            <div id="steps-img"/>
-            <div id="steps-process">
+            <motion.div id="steps-img"
+                style={stepsInView ? stepsBgImgUrl : {}}
+                animate={{opacity: stepsInView ? 1 : 0}}
+            ></motion.div>
+            <div id="steps-process" ref={stepsWrapperRef}>
                 <h2>Cómo funciona</h2>
                 <div className="steps-wrapper">
                     <Step
@@ -29,7 +45,7 @@ const Steps = (props, ref) => {
                         num="3"
                         icon={stepsReport()}
                         title="Te enviamos el informe final"
-                        body="Te informamos detalladamente de todas las anomalías que se pudieran encontrar y estimamos los costos aproximados para que puedas negociar el precio con el vendedor."                    
+                        body="Te informamos detalladamente de todas las anomalías que se pudieran encontrar y estimamos los costos aproximados para que puedas negociar el precio con el vendedor."
                     />
                 </div>
             </div>
