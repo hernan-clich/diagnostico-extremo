@@ -34,7 +34,8 @@ export const StyledHero = styled.section`
                 flex-flow: column;
                 justify-content: center;
                 align-items: center;
-                margin: ${outerSpacing()};
+                /* margin: ${outerSpacing()}; */
+                margin: auto;
                 width: 100%;
                 height: 40vh;
                 transform: translateX(0%);
@@ -113,7 +114,8 @@ export const StyledHero = styled.section`
                 width: 35%;
                 height: 100%;
                 div.hero-text {
-                    margin: 5em;
+                    /* margin: 5em; */
+                    margin: auto;
                     justify-content: flex-start;
                     align-items: flex-start;
                     transform: translateX(${outerSpacing()});
