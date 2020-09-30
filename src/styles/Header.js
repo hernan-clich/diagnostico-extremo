@@ -36,6 +36,10 @@ export const StyledHeader = styled.header `
         #nav-links {
             padding: 0.2em 0;
 
+            button:nth-child(4){
+                margin-right: 0;
+            }
+
             button {
                 color: ${primary()};
                 cursor: pointer;
@@ -175,8 +179,8 @@ export const StyledHeader = styled.header `
             bottom: 5vh;
             right: 2.5vw;
             display: block;
-            max-width: 70px;
-            max-height: 70px;
+            min-width: 5vw;
+            min-height: 5vh;
             transform: translateX(250%);
             transition: transform 600ms ease-in;
 
@@ -222,6 +226,60 @@ export const StyledHeader = styled.header `
         }
     }
 
+    @media (min-width: 1361px){
+        #nav-primary {
+            div:nth-child(1) {
+                margin-left: 2vw;
+                width: 15vw;
+                height: 4.5vw;
+                svg {
+                    width: 90%;
+                    overflow: visible;
+                }
+            }
+
+            #nav-links {
+                margin-right: 3vw;
+
+                button {
+                    font-size: 1vw;
+                    &:hover {
+                        color: ${plainWhite()};
+
+                        &::after {
+                            height: 0.3vh;
+                            bottom: -20%;
+                        }
+                    }
+                }
+            }
+        }
+
+        #nav-secondary {
+            div {
+                margin-right: 3vw;
+                font-size: 1vw;
+            }
+
+            a {
+                font-size: 1vw;
+            }
+        }
+
+        #fixed-whatsapp { 
+            svg {
+                min-width: 11vw;
+                min-height: 11vh;
+            }
+            svg.slide-in {
+                transform: translateX(25%);
+                &:hover {
+                    transform: translateX(25%) scale(1.15);
+                }
+            }
+        }
+    }
+
     /* For landscape phones */
     @media screen and (orientation:landscape) 
     and (max-device-height: 412px) {
@@ -231,6 +289,8 @@ export const StyledHeader = styled.header `
     /* Ipad Pro */
     @media only screen 
     and (min-width: 1024px) 
+    and (max-width: 1024px) 
+    and (min-height: 1366px) 
     and (max-height: 1366px) 
     and (orientation: portrait) 
     and (-webkit-min-device-pixel-ratio: 1.5) {
@@ -239,6 +299,8 @@ export const StyledHeader = styled.header `
 
     @media only screen 
     and (min-width: 1024px) 
+    and (max-width: 1024px) 
+    and (min-height: 1366px) 
     and (max-height: 1366px) 
     and (orientation: landscape) 
     and (-webkit-min-device-pixel-ratio: 1.5) {

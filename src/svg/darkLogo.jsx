@@ -2,7 +2,7 @@ import React from 'react';
 
 export const darkLogo = () => {
     return (
-        <svg width="173" height="64" viewBox="0 0 173 64" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+        <svg width="173" height="64" viewBox="0 0 173 64" preserveAspectRatio="xMidYMin slice" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
             <g style={{mixBlendMode:"luminosity"}}>
                 <path d="M0 0H121.741L115.867 38.4444L103.586 58.2006L0 63.0062V0Z" fill="url(#pattern0)"/>
             </g>

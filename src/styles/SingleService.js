@@ -55,4 +55,29 @@ export const StyledService = styled.div`
             min-height: 282px;
         }
     }
+
+    @media (min-width: 1361px){
+        .serv {
+            min-height: 45vh;
+            margin-top: 2vh;
+
+            .serv-img {
+                width: 96%;
+                min-height: 20vh;
+            }
+
+            .serv-text {
+                min-height: 15vh;
+                height: 50%;
+
+                h3 {
+                    font-size: 1.5vw;
+                }
+
+                p {
+                    font-size: 1.2vw;
+                }
+            }
+        }
+    }
 `

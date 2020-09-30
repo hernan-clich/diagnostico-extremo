@@ -135,8 +135,29 @@ export const StyledHero = styled.section`
                 width: 65%;
                 height: 100%;
                 background: 10% 0% no-repeat;
+                background-size: cover;
                 background-attachment: scroll;
                 clip-path: polygon(45% 0%, 0% 100%, 100% 100%, 100% 0%);
+            }
+        }
+    }
+
+    @media (min-width: 1361px){
+        #hero-main div.hero-text-wrapper div.hero-text {
+            margin: 0 0 0 10%;
+
+            h1 {
+                font-size: 2.5vw;
+            }
+            p {
+                font-size: 1.5vw;
+            }
+            a {
+                font-size: 1vw;
+                border-radius: 0.5vw;
+                &:hover {
+                    box-shadow: inset 0px 0px 0px 0.2vw ${props => props.secondary ? secondary() : primary()};
+                }
             }
         }
     }
@@ -180,6 +201,8 @@ export const StyledHero = styled.section`
     /* Ipad Pro */
     @media only screen 
     and (min-width: 1024px) 
+    and (max-width: 1024px) 
+    and (min-height: 1366px) 
     and (max-height: 1366px) 
     and (orientation: portrait) 
     and (-webkit-min-device-pixel-ratio: 1.5) {
@@ -193,6 +216,8 @@ export const StyledHero = styled.section`
 
     @media only screen 
     and (min-width: 1024px) 
+    and (max-width: 1024px) 
+    and (min-height: 1366px) 
     and (max-height: 1366px) 
     and (orientation: landscape) 
     and (-webkit-min-device-pixel-ratio: 1.5) {

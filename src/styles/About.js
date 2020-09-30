@@ -43,14 +43,14 @@ export const StyledAbout = styled.section`
             &::after {
                 position: absolute;
                 content: "";
-                top: 5%;
+                top: 10%;
                 left: 50%;
                 background: 55% 35% no-repeat;
                 background-size: 100%;
                 border-radius: 5px;
                 min-width: 220px;
                 width: 80%;
-                min-height: 225px;
+                min-height: 200px;
                 height: 60%;
                 transform: translateX(-50%);
             }
@@ -70,7 +70,7 @@ export const StyledAbout = styled.section`
 
             p {
                 font-size: 1rem;
-                margin: 5% 2em 1em;
+                margin: 1em 2em;
                 text-align: center;
                 line-height: 197.69%;
                 font-weight: 500;
@@ -82,6 +82,13 @@ export const StyledAbout = styled.section`
         @media (max-width: 321px){
             #about-text {
                 min-height: 580px;
+            }
+            #about-wrapper .about-revealed#about-img {
+                &::after {
+                    max-height: 160px;
+                    min-height: 140px;
+                    height: 0%;
+                }
             }
         }
 
@@ -111,9 +118,40 @@ export const StyledAbout = styled.section`
         }
     }
 
+    @media (min-width: 1361px){
+        &::after {
+            width: 7vw;
+            height: 1vh;
+            border-radius: 1vw;
+        }
+        
+        h2 {
+            font-size: 2vw;
+        }
+        #about-wrapper {
+            height: 50vh;
+
+            #about-img {
+                &::after {
+                    top: 10%;
+                    /* height: 80%; */
+                }
+            }
+            #about-text {
+
+                p {
+                    font-size: 1.2vw;
+                    margin: 8.5% ${outerSpacing()} 1em;
+                }
+            }
+        }
+    }
+
     /* Ipad Pro */
     @media only screen 
     and (min-width: 1024px) 
+    and (max-width: 1024px) 
+    and (min-height: 1366px) 
     and (max-height: 1366px) 
     and (orientation: portrait) 
     and (-webkit-min-device-pixel-ratio: 1.5) {
@@ -122,6 +160,8 @@ export const StyledAbout = styled.section`
 
     @media only screen 
     and (min-width: 1024px) 
+    and (max-width: 1024px) 
+    and (min-height: 1366px) 
     and (max-height: 1366px) 
     and (orientation: landscape) 
     and (-webkit-min-device-pixel-ratio: 1.5) {

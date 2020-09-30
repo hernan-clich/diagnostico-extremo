@@ -67,9 +67,11 @@ const Pricing = (props, ref) => {
                         onChange={e => setType(e.target.value)}
                         name="type"
                     >
-                        <option value="Escaneo">Escaneo</option>
-                        <option value="Dominio">Dominio</option>
-                        <option value="informeFull">Informe full</option>
+                        <optgroup label="Servicio">
+                            <option value="Escaneo">Escaneo</option>
+                            <option value="Dominio">Dominio</option>
+                            <option value="informeFull">Informe full</option>
+                        </optgroup>
                     </select>
                 </div>
                 <div>
@@ -79,10 +81,12 @@ const Pricing = (props, ref) => {
                         onChange={e => setLocation(e.target.value)}
                         name="location"
                     >
-                        {Object.keys(precios.zonas).map((zona, ind) => (
-                            <option key={ind} value={zona}>{zona}</option>    
-                        ))}
-                        <option value="Otros">Otros</option>
+                        <optgroup label="Zona">
+                            {Object.keys(precios.zonas).map((zona, ind) => (
+                                <option key={ind} value={zona}>{zona}</option>    
+                            ))}
+                            <option value="Otros">Otros</option>
+                        </optgroup>
                     </select>
                 </div>
                 <div>

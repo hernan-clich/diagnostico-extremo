@@ -67,9 +67,27 @@ export const StyledTestimonials = styled.section`
         }
     }
 
+    @media (min-width: 1361px){
+        overflow: hidden;
+        height: 100vh;
+        
+        h2 {
+            font-size: 2vw;
+        }
+        
+        #testi-wrapper {
+            margin-top: 2vh;
+            grid-template-columns: repeat(2, minmax(600px, 1fr));
+            grid-template-rows: repeat(2, 1fr 1fr);
+            grid-gap: 3vw;
+        }
+    }
+
     /* Ipad Pro */
     @media only screen 
     and (min-width: 1024px) 
+    and (max-width: 1024px) 
+    and (min-height: 1366px) 
     and (max-height: 1366px) 
     and (orientation: portrait) 
     and (-webkit-min-device-pixel-ratio: 1.5) {

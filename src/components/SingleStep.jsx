@@ -21,7 +21,9 @@ export const Step = props => {
                 transition={{ type: "spring", stiffness: 30}}
             >
                 <div className="steps-img">
-                    <div>{props.num}</div>
+                    <div>
+                        <span>{props.num}</span>
+                    </div>
                     {props.icon}
                 </div>
                 <div className="steps-text">

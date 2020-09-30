@@ -154,9 +154,65 @@ export const StyledContact = styled.section`
         }
     }
 
+    @media (min-width: 1361px){
+        #contact-wrapper {
+            .contact-text {
+
+                h3 {
+                    font-size: 1.8vw;
+                }
+
+                p {
+                    font-size: 1.1vw;
+                }
+            }
+        }
+
+        form {
+
+            label {
+                font-size: 0.95vw;
+            }
+
+            input, textarea {
+                font-size: 1vw;
+                border-radius: 1vh;
+
+                &:focus + label {
+                    font-size: 0.9vw;
+                }
+            }
+
+            .input-not-empty {
+                + label {
+                    font-size: 0.9vw;
+                }
+            }
+
+            .input-valid {
+                border: 0.29vw solid rgb(0, 156, 0);
+            }
+
+            .input-invalid {
+                border: 0.29vw solid rgb(168, 0, 0);
+            }
+
+            p {
+                font-size: 1vw;
+            }
+
+            button {
+                font-size: 1vw;
+                border-radius: 0.5vw;
+            }
+        }
+    }
+
     /* Ipad Pro */
     @media only screen 
     and (min-width: 1024px) 
+    and (max-width: 1024px) 
+    and (min-height: 1366px) 
     and (max-height: 1366px) 
     and (orientation: portrait) 
     and (-webkit-min-device-pixel-ratio: 1.5) {
@@ -165,6 +221,8 @@ export const StyledContact = styled.section`
 
     @media only screen 
     and (min-width: 1024px) 
+    and (max-width: 1024px) 
+    and (min-height: 1366px) 
     and (max-height: 1366px) 
     and (orientation: landscape) 
     and (-webkit-min-device-pixel-ratio: 1.5) {

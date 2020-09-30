@@ -20,13 +20,14 @@ export const StyledStep = styled.div`
                 height: 50px;
                 width: 50px;
                 clip-path: circle(50% at 50% 50%);
-                text-align: center;
-                padding-top: auto;
-                vertical-align: middle;
-                line-height: 50px;
-                font-size: 1.5rem;
-                font-weight: 600;
                 margin-right: 1.5em;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                span {
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                }
             }
 
             svg {
@@ -62,5 +63,45 @@ export const StyledStep = styled.div`
                 padding: 0.5em 0;
             }
         }    
+    }
+
+    @media (min-width: 1361px){
+        #steps {
+            padding: 3vh 0;
+
+            .steps-img {
+                padding: 0;
+                height: 6vw;
+                margin-right: 1.5vw;
+                width: 20vw;
+                max-width: 12.5vw;
+
+                div:nth-child(1) {
+                    min-width: 3.2vw;
+                    min-height: 7vh;
+                    margin-right: 15px;
+                    span {
+                        font-size: 1.8vw;
+                    }
+                }
+
+                svg {
+                    height: 100%;
+                    width: 80%;
+                    overflow: visible;
+                }
+            }
+
+            .steps-text {
+                h3 {
+                    font-size: 1.4vw;
+                }
+
+                p {
+                    font-size: 1.2vw;
+                    padding-top: 0;
+                }
+            }
+        }
     }
 `

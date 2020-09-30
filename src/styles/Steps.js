@@ -47,7 +47,6 @@ export const StyledSteps = styled.section`
     @media (min-width: 992px){
         #steps-img {
             display: block;
-            /* background: url(./assets/steps-car.png) 15% 50% no-repeat; */
             background: 15% 50% no-repeat;
             background-size: cover;
             width: 35vw;
@@ -74,9 +73,34 @@ export const StyledSteps = styled.section`
         }
     }
 
+    @media (min-width: 1361px){
+        height: 85vh;
+        overflow: hidden;
+        
+        #steps-process {
+            margin-top: 0;
+            h2 {
+                font-size: 2vw;
+            }
+
+            .steps-wrapper {
+
+                &::before {
+                    height: 100%;
+                    width: 0.4vw;
+                    left: 1.45vw;
+                    top: 0%;
+                    bottom: 0%;
+                }
+            }
+        } 
+    }
+
     /* Ipad Pro */
     @media only screen 
     and (min-width: 1024px) 
+    and (max-width: 1024px) 
+    and (min-height: 1366px) 
     and (max-height: 1366px) 
     and (orientation: portrait) 
     and (-webkit-min-device-pixel-ratio: 1.5) {
@@ -89,7 +113,9 @@ export const StyledSteps = styled.section`
 
     @media only screen 
     and (min-width: 1024px) 
-    and (max-height: 1366px) 
+    and (max-width: 1024px) 
+    and (min-height: 1366px) 
+    and (max-height: 1366px)  
     and (orientation: landscape) 
     and (-webkit-min-device-pixel-ratio: 1.5) {
         min-height: 40vh;

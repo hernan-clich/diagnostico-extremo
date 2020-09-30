@@ -56,7 +56,14 @@ export const StyledPricing = styled.section`
                 font-weight: 600;
                 cursor: pointer;
                 border-radius: 2.5px;
+                optgroup {
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    max-width: 50%;
+                }
             }
+
+            
 
             option {
                 background-color: ${secondary()};
@@ -98,18 +105,18 @@ export const StyledPricing = styled.section`
         }
 
         h4:nth-child(1) {
-            margin: 0.75em;
+            margin-top: 4vh;
             font-size: 105%;
         }
 
         h4:nth-child(3) {
-            margin: 0.75em 0.75em 2em;
+            margin: 0.75em 0.75em;
         }
 
         a {
-            margin: 0 auto 1.5em;
+            margin: 3vh auto 1.5em;
             min-width: 150px;
-            width: 50%;
+            width: 40%;
             align-self: flex-end;
         }
     }
@@ -120,6 +127,70 @@ export const StyledPricing = styled.section`
             div {
                 margin: 2em;
                 min-width: 280px;
+                select {
+                    optgroup {
+                        font-size: 1.5vw;
+                    }
+                }
+            }
+        }
+        
+    }
+
+    @media (min-width: 1361px){
+        h2 {
+            font-size: 2vw;
+        }
+
+        .pricing-wrapper {
+            min-height: 40vh;
+
+            div {
+                box-shadow: 0.5vw -0.5vw 0px 0px ${secondary()};
+                margin: 1.5vw;
+                border-radius: 0.5vh;
+
+                h3 {
+                    font-size: 1.5vw;
+                }
+
+                select {
+                    width: 90%;
+                    min-height: 8vh;
+                    border: 0.5vh black solid;
+                    font-size: 1.4vw;
+                    border-radius: 2.5px;
+                    optgroup {
+                        font-size: 0.5vw;
+                    }
+                }
+
+                span {
+                    font-size: 4vw;
+                }
+
+                p {
+                    font-size: 2.5vw;
+                }
+            }
+        }
+
+        .pricing-disclaimers {
+            width: 81vw;
+            h4 {
+                font-size: 1.1vw;
+            }
+
+            h4:nth-child(1) {
+                font-size: 1.3vw;
+                margin-top: 4vh;
+            }
+
+            a {
+                font-size: 1vw;
+                border-radius: 0.5vw;
+                width: 40%;
+                margin-top: 2vh;
             }
         }
     }
@@ -127,6 +198,8 @@ export const StyledPricing = styled.section`
     /* Ipad Pro */
     @media only screen 
     and (min-width: 1024px) 
+    and (max-width: 1024px) 
+    and (min-height: 1366px) 
     and (max-height: 1366px) 
     and (orientation: portrait) 
     and (-webkit-min-device-pixel-ratio: 1.5) {
@@ -135,6 +208,8 @@ export const StyledPricing = styled.section`
 
     @media only screen 
     and (min-width: 1024px) 
+    and (max-width: 1024px) 
+    and (min-height: 1366px) 
     and (max-height: 1366px) 
     and (orientation: landscape) 
     and (-webkit-min-device-pixel-ratio: 1.5) {

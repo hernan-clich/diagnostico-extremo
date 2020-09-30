@@ -32,9 +32,42 @@ export const StyledTestimonial = styled.div`
         padding-bottom: 1em;
     }
 
+    @media (min-width: 1361px){
+        border-radius: 1vh;
+
+        div {
+            margin: 0.75vw;
+        }
+
+        h4 {
+            margin-left: 0.5vw;
+            font-size: 1.2vw;
+        }
+
+        svg {
+            margin: 1vh 0.1vw 0;
+            overflow: visible;
+            width: 1.8vw;
+            height: 3vh;
+        }
+
+        svg:nth-child(2){
+            margin-left: 0.4vw;
+        }
+
+        p {
+            font-size: 1.1vw;
+            margin: auto 1vw;
+            padding: 0 0.5em 3vh;
+            line-height: 125%;
+        }
+    }
+
     /* Ipad Pro */
     @media only screen 
     and (min-width: 1024px) 
+    and (max-width: 1024px) 
+    and (min-height: 1366px) 
     and (max-height: 1366px) 
     and (orientation: portrait) 
     and (-webkit-min-device-pixel-ratio: 1.5) {
@@ -43,6 +76,8 @@ export const StyledTestimonial = styled.div`
 
     @media only screen 
     and (min-width: 1024px) 
+    and (max-width: 1024px) 
+    and (min-height: 1366px) 
     and (max-height: 1366px) 
     and (orientation: landscape) 
     and (-webkit-min-device-pixel-ratio: 1.5) {

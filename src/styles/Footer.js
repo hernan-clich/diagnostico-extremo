@@ -66,7 +66,29 @@ export const StyledFooter = styled.footer`
                 path {
                     fill: ${primary()};
                 }
-            } 
+            }
+        }
+    }
+
+    @media (min-width: 1361px){
+        button, p, a {
+            font-size: 1vw;
+        }
+        .footer-icons div, 
+        .footer-icons a {
+            padding: 2.5vh 0.5vw;
+            margin: 2vh 0 4vh;
+            
+        }
+
+        .footer-icons a {
+            pointer-events: visible;
+        }
+
+        svg {
+            height: 3vh;
+            width: 3vw;
+            overflow: visible;
         }
     }
 
@@ -79,6 +101,8 @@ export const StyledFooter = styled.footer`
     /* Ipad Pro */
     @media only screen 
     and (min-width: 1024px) 
+    and (max-width: 1024px) 
+    and (min-height: 1366px) 
     and (max-height: 1366px) 
     and (orientation: portrait) 
     and (-webkit-min-device-pixel-ratio: 1.5) {
@@ -87,6 +111,8 @@ export const StyledFooter = styled.footer`
 
     @media only screen 
     and (min-width: 1024px) 
+    and (max-width: 1024px) 
+    and (min-height: 1366px) 
     and (max-height: 1366px) 
     and (orientation: landscape) 
     and (-webkit-min-device-pixel-ratio: 1.5) {

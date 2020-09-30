@@ -15,25 +15,40 @@ export const StyledModal = styled.div`
 
     #modal-main {
         position: fixed;
-        max-width: 90%;
-        max-height: 90%;
+        max-width: 90vw;
+        max-height: 90vh;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         background-color: ${secondary()};
-        border: 5px solid ${primary()};
+        border: 0.5vh solid ${primary()};
         border-radius: 15px;
-        padding: 2em;
+        padding: 4vw;
         text-align: center;
         z-index: 6;
 
         h2 {
             color: ${plainWhite()};
+            font-size: 1.7rem;
         }
 
         button {
-            width: 60%;
+            width: 70%;
             margin-top: 2.5em;
+            font-size: 1rem;
+            border-radius: 0.5vw;
+        }
+    }
+
+    @media (min-width: 992px){
+        #modal-main {
+            h2 {
+                font-size: 2.5vw;
+            }
+
+            button {
+                font-size: 1.25vw;
+            }
         }
     }
     
