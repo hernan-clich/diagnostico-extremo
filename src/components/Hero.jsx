@@ -6,10 +6,10 @@ import { StyledHero } from '../styles/Hero';
 import { Button } from './Button.js';
 
 const Hero = (props, ref) => {
-
-    const heroBgImgUrl = {
+    
+    const heroImg = {
         backgroundImage: 'url(./assets/hero-car.png)'
-    };
+    }
 
     const [heroMainRef, heroInView] = useInView({
         threshold: 0.15,
@@ -35,7 +35,7 @@ const Hero = (props, ref) => {
                     </div>
                 </motion.div>
                 <motion.div className="hero-img"
-                    style={heroInView ? heroBgImgUrl : {}}
+                    style={heroInView ? heroImg : {}}
                     initial={{x: "100vw"}}
                     animate={{x: "0"}}
                     transition={{ type: "spring", stiffness: 30 }}

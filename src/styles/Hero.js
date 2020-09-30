@@ -9,7 +9,6 @@ export const StyledHero = styled.section`
 
     &::after{
         display: none;
-        
     }
 
     #hero-main {
@@ -71,7 +70,7 @@ export const StyledHero = styled.section`
         div.hero-img {
             width: 100vw;
             height: 37.5%;
-            background: 30% 0%;
+            background: 40% 0% no-repeat;
             background-size: cover;
             background-attachment: fixed;
             clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
@@ -136,7 +135,7 @@ export const StyledHero = styled.section`
             div.hero-img {
                 width: 65%;
                 height: 100%;
-                background: 10% 0% no-repeat;
+                background: 20% 0% no-repeat;
                 background-size: cover;
                 background-attachment: scroll;
                 clip-path: polygon(45% 0%, 0% 100%, 100% 100%, 100% 0%);
@@ -213,6 +212,11 @@ export const StyledHero = styled.section`
         div.hero-text-wrapper 
         div.hero-text {
             transform: translate(${outerSpacing()}, 20%);
+        }
+        #hero-main
+        div.hero-img {
+            background: 40% 0% no-repeat;
+            background-size: cover;
         }
     }
 
