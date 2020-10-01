@@ -57,13 +57,12 @@ export const StyledPricing = styled.section`
                 cursor: pointer;
                 border-radius: 2.5px;
                 optgroup {
-                    font-size: 0.9rem;
+                    font-size: 1rem;
                     font-weight: 600;
                     max-width: 50%;
+                    text-transform: capitalize;
                 }
             }
-
-            
 
             option {
                 background-color: ${secondary()};
@@ -129,7 +128,7 @@ export const StyledPricing = styled.section`
                 min-width: 280px;
                 select {
                     optgroup {
-                        font-size: 1.5vw;
+                        font-size: 25px;
                     }
                 }
             }
@@ -161,7 +160,7 @@ export const StyledPricing = styled.section`
                     font-size: 1.4vw;
                     border-radius: 2.5px;
                     optgroup {
-                        font-size: 0.5vw;
+                        font-size: 1.5vw;
                     }
                 }
 

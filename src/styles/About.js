@@ -4,7 +4,7 @@ import { primary, secondary, plainWhite, outerSpacing } from './Variables';
 
 export const StyledAbout = styled.section`
     width: 100vw;
-    min-height: 85vh;
+    min-height: 90vh;
     height: auto;
     background-color: ${secondary()};
     position: relative;
@@ -41,9 +41,10 @@ export const StyledAbout = styled.section`
             min-height: 300px;
             position: relative;
             &::after {
+                margin: 0;
                 position: absolute;
                 content: "";
-                top: 10%;
+                top: 50%;
                 left: 50%;
                 background: 55% 35% no-repeat;
                 background-size: 100%;
@@ -52,7 +53,7 @@ export const StyledAbout = styled.section`
                 width: 80%;
                 min-height: 200px;
                 height: 60%;
-                transform: translateX(-50%);
+                transform: translate(-50%, -50%);
             }
         }
 
@@ -67,10 +68,13 @@ export const StyledAbout = styled.section`
             background-color: ${secondary()};
             width: 100%;
             min-height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
             p {
                 font-size: 1rem;
-                margin: 1em 2em;
+                margin: 0 3em 8em;
                 text-align: center;
                 line-height: 197.69%;
                 font-weight: 500;
@@ -111,7 +115,7 @@ export const StyledAbout = styled.section`
                 width: 50%;
                 min-height: 300px;
                 p {
-                    margin: 5% ${outerSpacing()} 1em;
+                    margin: 1em ${outerSpacing()};
                     text-align: left;
                 }
             }
@@ -131,17 +135,11 @@ export const StyledAbout = styled.section`
         #about-wrapper {
             height: 50vh;
 
-            #about-img {
-                &::after {
-                    top: 10%;
-                    /* height: 80%; */
-                }
-            }
             #about-text {
 
                 p {
                     font-size: 1.2vw;
-                    margin: 8.5% ${outerSpacing()} 1em;
+                    margin: 0 ${outerSpacing()};
                 }
             }
         }

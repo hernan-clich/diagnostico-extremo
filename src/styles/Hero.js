@@ -33,7 +33,6 @@ export const StyledHero = styled.section`
                 flex-flow: column;
                 justify-content: center;
                 align-items: center;
-                /* margin: ${outerSpacing()}; */
                 margin: auto;
                 width: 100%;
                 height: 40vh;
@@ -70,7 +69,7 @@ export const StyledHero = styled.section`
         div.hero-img {
             width: 100vw;
             height: 60vh;
-            background: 40% 0% no-repeat;
+            background: 40% 55% no-repeat;
             background-size: cover;
             background-attachment: scroll;
             clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);

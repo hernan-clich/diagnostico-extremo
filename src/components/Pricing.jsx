@@ -69,7 +69,7 @@ const Pricing = (props, ref) => {
                     >
                         <optgroup label="Servicio">
                             <option value="Escaneo">Escaneo</option>
-                            <option value="Dominio">Dominio</option>
+                            <option value="Dominio">Informe de Dominio</option>
                             <option value="informeFull">Informe full</option>
                         </optgroup>
                     </select>
