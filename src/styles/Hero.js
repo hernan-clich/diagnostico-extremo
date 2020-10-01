@@ -66,13 +66,13 @@ export const StyledHero = styled.section`
                 }
             }
         }
-        
+
         div.hero-img {
             width: 100vw;
-            height: 37.5%;
+            height: 60vh;
             background: 40% 0% no-repeat;
             background-size: cover;
-            background-attachment: fixed;
+            background-attachment: scroll;
             clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
         }
     }
