@@ -34,7 +34,7 @@ const Pricing = (props, ref) => {
                     setMpLink(precios.links[typ]);
                 }
                 if(typ === "informeFull") {
-                    setPrice(precios.zonas[loc] + precios.Dominio + 1);
+                    setPrice(precios.zonas[loc] + precios.Dominio);
                     setMpLink(precios.links[typ]);
                 }
             }
