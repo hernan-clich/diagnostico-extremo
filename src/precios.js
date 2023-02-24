@@ -2,7 +2,7 @@ export const precios = {
   Dominio: 5900,
   Otros: "Consultar por otras localidades",
   zonas: {
-    "CABA": 9900
+    "CABA": 11900
   }, 
   links: {
     Escaneo: "https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=448382769-ca971c73-303c-4b32-9100-4f8cf2cc8248",
