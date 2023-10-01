@@ -1,8 +1,8 @@
 export const precios = {
-  Dominio: 6900,
+  Dominio: 8900,
   Otros: "Consultar por otras localidades",
   zonas: {
-    CABA: 15000,
+    CABA: 20000,
   },
   links: {
     Escaneo:
