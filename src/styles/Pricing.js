@@ -90,6 +90,7 @@ export const StyledPricing = styled.section`
         border-radius: 2.5px;
         display: flex;
         flex-flow: column;
+        padding: 1.5rem;
 
         h4 {
             text-align: center;
@@ -104,7 +105,6 @@ export const StyledPricing = styled.section`
         }
 
         h4:nth-child(1) {
-            margin-top: 4vh;
             font-size: 105%;
         }
 
@@ -182,7 +182,6 @@ export const StyledPricing = styled.section`
 
             h4:nth-child(1) {
                 font-size: 1.3vw;
-                margin-top: 4vh;
             }
 
             a {

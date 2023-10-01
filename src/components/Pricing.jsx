@@ -3,16 +3,13 @@ import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
 
 import { precios } from '../precios';
-import { Button } from './Button.js';
-import { ButtonDisabled } from './ButtonDisabled.js';
 import { StyledPricing } from '../styles/Pricing';
 
-const Pricing = (props, ref) => {
+const Pricing = (_props, ref) => {
     
     const [price, setPrice] = useState("");
     const [type, setType] = useState("Escaneo");
     const [location, setLocation] = useState("CABA");
-    const [mpLink, setMpLink] = useState(precios.links["inspeccion"]);
 
     const [priceMainRef, priceInView] = useInView({
         threshold: 0.05,
@@ -27,15 +24,12 @@ const Pricing = (props, ref) => {
             } else {
                 if(typ === "Escaneo") {
                     setPrice(precios.zonas[loc]);
-                    setMpLink(precios.links[typ]);
                 }
                 if(typ === "Dominio") {
                     setPrice(precios.Dominio);
-                    setMpLink(precios.links[typ]);
                 }
                 if(typ === "informeFull") {
                     setPrice(precios.zonas[loc] + precios.Dominio);
-                    setMpLink(precios.links[typ]);
                 }
             }
         }
@@ -99,10 +93,6 @@ const Pricing = (props, ref) => {
                 {type === "informeFull" && <h4>El informe full comprende:</h4>}
                 {type !== "Dominio" && <h4><span>Escaneo computarizado: </span>Incluye revisión mecánica, diagnóstico con scanner, estructura general, prueba de manejo.</h4>}
                 {type !== "Escaneo" && <h4><span>Informe de dominio: </span>Incluye número de chasis y motor, prendas y embargos, inhibición para vender, usufructo o leasing, afectaciones para transferir.</h4>}
-                {(location === "CABA") || (location === "Otros" && type === "Dominio") ? 
-                    <Button as="a" href={mpLink} rel="external noopener noreferrer" target="_blank">Contratar</Button> :
-                    <ButtonDisabled as="a">Contratar</ButtonDisabled>
-                }
             </div>
             
         </StyledPricing>
