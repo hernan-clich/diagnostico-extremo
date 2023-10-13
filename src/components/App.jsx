@@ -24,7 +24,13 @@ function App() {
   const testimonialsRef = useRef(null);
   const heroRef = useRef(null);
 
-  const queryClient = new QueryClient();
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        refetchOnWindowFocus: false,
+      }
+    }
+  });
 
   return (
     <QueryClientProvider client={queryClient}>
