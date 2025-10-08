@@ -23,7 +23,26 @@ jobs:
       - name: Build project
         run: yarn build
 
+      - name: Backup remote public_html
+        env:
+          FTP_USER: ${{ secrets.FTP_USER }}
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          LFTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          mkdir -p backup
+          lftp -e "
+            set ssl:verify-certificate no;
+            set net:max-retries 2;
+            set net:timeout 20;
+            open -u $FTP_USER $FTP_HOST;
+            mirror /public_html ./backup/public_html;
+            bye;
+          "
+          tar -czf public_html_backup.tar.gz -C backup public_html
+
       - name: Deploy via FTP
+        id: deploy
+        continue-on-error: true
         uses: SamKirkland/FTP-Deploy-Action@a51268f67f6605236975928ae28b0f7e9971d50a
         with:
           server: ${{ secrets.FTP_HOST }}
@@ -36,3 +55,20 @@ jobs:
           server-dir: /public_html/
           timeout: 1800
           dangerous-clean-slate: false
+
+      - name: Restore backup if deploy failed
+        if: failure() && steps.deploy.outcome == 'failure'
+        env:
+          FTP_USER: ${{ secrets.FTP_USER }}
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          LFTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          tar -xzf public_html_backup.tar.gz
+          lftp -e "
+            set ssl:verify-certificate no;
+            set net:max-retries 2;
+            set net:timeout 20;
+            open -u $FTP_USER $FTP_HOST;
+            mirror -R ./backup/public_html /public_html;
+            bye;
+          "

@@ -144,8 +144,8 @@ export const Header = ({setBodyOverflowY}, ref) => {
         <StyledHeader ref={headerRef}>
             <div id="nav-secondary">
                 {width >= 400 ?
-                <div>Consultas: <a href="https://wa.me/5491138191735" rel="external noopener noreferrer" target="_blank">11-3819-1735</a> | <a href="https://wa.me/5491166681006" rel="noopener noreferrer"target="_blank">11-6668-1006</a></div> : 
-                <div><a href="https://wa.me/5491138191735" rel="external noopener noreferrer" target="_blank">11-3819-1735</a> | <a href="https://wa.me/5491166681006" rel="noopener noreferrer"target="_blank">11-6668-1006</a></div>
+                <div>Consultas: <a href="https://wa.me/5491138191735" rel="external noopener noreferrer" target="_blank">11-3819-1735</a> / <a href="https://wa.me/5491166681006" rel="noopener noreferrer"target="_blank">11-6668-1006</a></div> : 
+                <div><a href="https://wa.me/5491138191735" rel="external noopener noreferrer" target="_blank">11-3819-1735</a> / <a href="https://wa.me/5491166681006" rel="noopener noreferrer"target="_blank">11-6668-1006</a></div>
                 }
             </div>
             <div id="nav-primary" style={{backgroundColor:secondary(navColor)}}>
