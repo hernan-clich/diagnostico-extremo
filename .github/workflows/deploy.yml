@@ -31,7 +31,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           security: loose
-          local-dir: ./build
-          server-dir: /public_html
+          local-dir: ./build/
+          server-dir: /public_html/
           timeout: 600
           dangerous-clean-slate: false
