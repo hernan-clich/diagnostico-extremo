@@ -1,8 +1,7 @@
 name: Build and Deploy via FTP
 
 on:
-  push:
-    branches: [master]
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
@@ -25,7 +24,7 @@ jobs:
         run: yarn build
 
       - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@4.3.6
+        uses: SamKirkland/FTP-Deploy-Action@a51268f67f6605236975928ae28b0f7e9971d50a
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USER }}
