@@ -30,14 +30,14 @@ jobs:
         env:
           FTP_USER: ${{ secrets.FTP_USER }}
           FTP_HOST: ${{ secrets.FTP_HOST }}
-          LFTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
           mkdir -p backup
           lftp -e "
             set ssl:verify-certificate no;
             set net:max-retries 2;
             set net:timeout 20;
-            open -u $FTP_USER $FTP_HOST;
+            open -u $FTP_USER,$FTP_PASSWORD $FTP_HOST;
             mirror /public_html ./backup/public_html;
             bye;
           "
