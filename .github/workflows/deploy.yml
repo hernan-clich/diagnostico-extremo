@@ -32,16 +32,25 @@ jobs:
           FTP_HOST: ${{ secrets.FTP_HOST }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
+          echo "🚀 Starting full backup of /public_html"
           mkdir -p backup
+
+          echo "🔗 Connecting to FTP server..."
           lftp -e "
             set ssl:verify-certificate no;
             set net:max-retries 2;
             set net:timeout 20;
             open -u $FTP_USER,$FTP_PASSWORD $FTP_HOST;
-            mirror /public_html ./backup/public_html;
+            echo '📡 Connection established. Starting mirror...';
+            mirror --verbose --parallel=2 /public_html ./backup/public_html;
+            echo '✅ Mirror complete. Closing connection.';
             bye;
           "
+
+          echo "🗜️ Compressing backup into public_html_backup.tar.gz..."
           tar -czf public_html_backup.tar.gz -C backup public_html
+
+          echo "🎉 Backup completed successfully!"
 
       - name: Deploy via FTP
         id: deploy
